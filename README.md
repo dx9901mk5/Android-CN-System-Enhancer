@@ -39,13 +39,13 @@
    - **反偵測 ADB 與無障礙隱藏**：進入一般 App 時自動隱藏 `adb_enabled`、`adb_wifi_enabled` 與 `development_settings_enabled`（預設自動排除本身需使用 Shizuku 的 App）；亦可自訂勾選需同時隱藏「開發者模式與無障礙」的目標 App（如行動支付／銀行／會員 App），離開 App 或關閉螢幕時自動還原。
    - **自動消除 vivo 開發模式通知**：自動清除系統因切換開發者模式所彈出的風險提醒通知。
 
-5. **Tab 5 — 免費工具箱（永久免費 / Permanently Free）**
-   - **雙擊電源鍵啟動相機**：透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
-   - **Vivo / iQOO 陸版系統修復**：免接電腦，直接透過 Shizuku 一鍵修復「導航語音 (Google TTS)」與「雙開空間推播通知（User 999 補齊 GMS）」。
+5. **Tab 5 — 免費工具箱（永久免費・專為 Vivo / iQOO 陸版 ROM 設計 / Permanently Free・For Vivo CN ROM）**
+   - **雙擊電源鍵啟動相機（Vivo 陸版修復）**：專為 Vivo / iQOO OriginOS 陸版無電源鍵雙擊快啟相機之系統限制打造，透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
+   - **Vivo / iQOO 陸版系統修復（導航語音 & 雙開通知）**：免接電腦，直接透過 Shizuku 一鍵修復 Vivo CN ROM「導航語音 (Google TTS)」與「雙開空間推播通知（User 999 補齊 GMS）」。
 
 ### 🔄 近期版本更新摘要（`v0.1.0` → `v3.0.1`）
 
-- **`v3.0.1`**：新增 **Tab 5「免費工具」分頁（永久免費）**，整合「雙擊電源鍵啟動相機」與「Vivo / iQOO 陸版系統修復（導航語音 Google TTS 標準／深度突破修復 + 雙開空間 User 999 GMS 通知修復）」，全由 Shizuku 直接驅動、免接電腦。
+- **`v3.0.1`**：新增 **Tab 5「免費工具」分頁（永久免費）**，整合兩項專為 **Vivo / iQOO CN ROM** 打造的 Shizuku 免電腦修復功能：「雙擊電源鍵啟動相機」與「Vivo 陸版系統修復（導航語音 Google TTS 標準／深度突破修復 + 雙開空間 User 999 GMS 通知修復）」。
 - **`v2.3.5`**：設定備份的「匯出」與「匯入」新增 **Google 雲端硬碟 App** 選項，可直接呼叫手機 Google 雲端硬碟 App 選擇上傳位置或選取雲端 JSON 備份檔（保留本地檔案選項與系統 Fallback）。
 - **`v2.3.4`**：Tab 3（語音攔截）最上方新增「預設數位語音助理」設定卡片與「選擇預設助理」按鈕，可一鍵跳轉系統預設數位助理應用程式設定（含四語系翻譯與設定頁 Fallback）。
 - **`v2.3.3`**：移除測試版更新通道常數與本地測試資料夾，僅保留 GitHub 與正式版更新通道，並清理正式發布目錄僅保留最新正式版 APK。
@@ -79,13 +79,13 @@
    - **Anti-ADB & Accessibility Hiding**: Hides `adb_enabled`, `adb_wifi_enabled`, and `development_settings_enabled` for regular apps while excluding Shizuku-dependent apps by default. Supports a custom app list to hide both Developer Options/ADB and Accessibility Services, restoring them automatically on exit or screen off.
    - **Auto-Dismiss System Dev Warnings**: Automatically clears repetitive vivo/system "Developer Mode active" warning notifications.
 
-5. **Tab 5 — Free Tools (`Permanently Free`)**
-   - **Double-Tap Power Key Camera**: Monitors hardware power-key double-taps via Shizuku to launch the camera on lockscreen/screen-off or unlocked states.
-   - **Vivo / iQOO CN System Fixes**: One-tap Shizuku repairs without a PC for Navigation Voice (Google TTS standard & deep breakthrough) and Dual-App Push Notifications (User 999 GMS provisioning).
+5. **Tab 5 — Free Tools (`Permanently Free・Tailored for Vivo / iQOO CN ROM`)**
+   - **Double-Tap Power Key Camera (Vivo CN ROM Fix)**: Specifically built to restore double-tap power key camera launch on Vivo / iQOO OriginOS CN ROMs via Shizuku, supporting Always / Locked-only / Unlocked-only scopes and dual lockscreen modes.
+   - **Vivo / iQOO CN System Fixes (Navigation Voice & Dual-App Notifications)**: PC-free, Shizuku-driven one-tap repairs specifically for Vivo CN ROMs — fixing Navigation Voice (Google TTS standard & deep breakthrough) and Dual-App Push Notifications (User 999 GMS provisioning).
 
 ### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.0.1`)
 
-- **`v3.0.1`**: Added **Tab 5 "Free Tools" (permanently free)**, integrating Double-Tap Power Key Camera and Shizuku-driven Vivo/iQOO CN repairs (Google TTS navigation voice fix + Dual-App User 999 GMS notification fix).
+- **`v3.0.1`**: Added **Tab 5 "Free Tools" (permanently free)**, integrating two Shizuku-powered fixes tailored for **Vivo / iQOO CN ROM**: Double-Tap Power Key Camera and Vivo CN system repairs (Google TTS navigation voice fix + Dual-App User 999 GMS notification fix).
 - **`v2.3.5`**: Added **Google Drive App** integration to Settings Backup Export & Import, allowing users to pick an upload folder or select a JSON backup directly via the Google Drive app (alongside Local storage and system fallbacks).
 - **`v2.3.4`**: Added a "Default Digital Assistant" card and "Select Default Assistant" shortcut at the top of Tab 3 (Voice Intercept) to open the system default assistant settings directly (with 4-language translations and settings fallbacks).
 - **`v2.3.3`**: Removed beta update channel references and local testing folder; streamlined releases to keep only the latest official APK alongside GitHub updates.
