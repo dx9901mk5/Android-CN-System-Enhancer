@@ -42,8 +42,9 @@
    - **雙擊電源鍵啟動相機（Vivo 陸版修復）**：專為 Vivo / iQOO OriginOS 陸版無電源鍵雙擊快啟相機之系統限制打造，透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
    - **Vivo / iQOO 陸版導航語音修復（Google TTS）**：免接電腦，直接透過 Shizuku 一鍵修復 Vivo CN ROM 導航語音識別（標準直接修復／深度突破修復）。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.0.3`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.0.4`）
 
+- **`v3.0.4`**：修正開機檢測通知在取得 Shizuku 授權後未移除的問題（輪詢每 30 秒主動呼叫 `ShizukuProvider.requestBinderForNonProviderProcess` 重新取得 Binder 並監聽授權結果，確認授權即自動撤除通知）。
 - **`v3.0.3`**：Bug 修復與精簡更新檢查（移除雲端資料夾檢查，僅保留 GitHub Releases 更新）。
 - **`v3.0.2`**：Tab 5 頂部橫幅改為固定顯示「永久免費（不佔用方案額度）」並隱藏付費按鈕；暫時隱藏「Vivo 雙開通知修復」選項，聚焦雙擊電源鍵相機與導航語音修復。
 - **`v3.0.1`**：新增 **Tab 5「免費工具」分頁（永久免費）**，整合兩項專為 **Vivo / iQOO CN ROM** 打造的 Shizuku 免電腦修復功能。
@@ -84,8 +85,9 @@
    - **Double-Tap Power Key Camera (Vivo CN ROM Fix)**: Specifically built to restore double-tap power key camera launch on Vivo / iQOO OriginOS CN ROMs via Shizuku, supporting Always / Locked-only / Unlocked-only scopes and dual lockscreen modes.
    - **Vivo / iQOO CN Navigation Voice Fix (Google TTS)**: PC-free, Shizuku-driven one-tap repair specifically for Vivo CN ROMs (Standard direct mode & Deep Breakthrough mode).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.0.3`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.0.4`)
 
+- **`v3.0.4`**: Fixed Shizuku boot-watch notification not clearing after authorization (polls every 30s and actively refreshes Shizuku binder via `ShizukuProvider.requestBinderForNonProviderProcess`).
 - **`v3.0.3`**: Bug fixes and streamlined update checker (GitHub Releases only).
 - **`v3.0.2`**: Tab 5 top banner now displays "Permanently Free" with no paid prompt, and hides the Vivo Dual-App notification repair option.
 - **`v3.0.1`**: Added **Tab 5 "Free Tools" (permanently free)**, integrating two Shizuku-powered fixes tailored for **Vivo / iQOO CN ROM**.
