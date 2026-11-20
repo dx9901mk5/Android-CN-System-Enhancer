@@ -8,12 +8,11 @@
 
 ---
 
-## 📦 下載與發布管道 / Download & Release Channels
+## 📦 下載與發布管道 / Download & Release Channel
 
 | 管道 / Channel | 連結 / URL | 說明 / Notes |
 | :--- | :--- | :--- |
 | **GitHub Releases** | https://github.com/dx9901mk5/Android-CN-System-Enhancer/releases | 最新穩定版與完整發行說明 / Latest stable releases & release notes |
-| **Google 雲端硬碟（正式發布）** | https://drive.google.com/drive/folders/1XslS7y9wjrie7pb9UZby2VY24-NSoR7E | 正式版 APK 鏡像資料夾 / Official Release APK mirror |
 
 ---
 
