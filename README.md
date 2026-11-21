@@ -42,9 +42,11 @@
    - **雙擊電源鍵啟動相機（Vivo 陸版修復）**：專為 Vivo / iQOO OriginOS 陸版無電源鍵雙擊快啟相機之系統限制打造，透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
    - **Vivo / iQOO 陸版導航語音修復（Google TTS）**：免接電腦，直接透過 Shizuku 一鍵修復 Vivo CN ROM 導航語音識別（標準直接修復／深度突破修復）。
    - **Shizuku 靜默安裝 APK**：選取手機內任意 `.apk` 安裝檔，透過 Shizuku 權限免點擊確認視窗直接靜默安裝（支援覆蓋、測試版與選配降級 `-d` 安裝）。
+   - **開發者／USB 通知檢測與 Gmail 寄出 Log**：透過 Shizuku 讀取系統目前通知並產生診斷 `.txt` Log（協助分辨不同品牌手機的開發者模式／USB 偵錯通知來源），可一鍵啟動 Gmail 並附上 Log 自選收件人寄出。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.0.5`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.0.6`）
 
+- **`v3.0.6`**：Tab 5「免費工具箱」新增 **開發者／USB 通知檢測與 Gmail 寄出 Log** 功能，透過 Shizuku 擷取不同品牌手機的系統通知資訊產生 Log 檔，並支援一鍵啟動 Gmail 附上 Log 自選收件人寄出。
 - **`v3.0.5`**：Tab 5「免費工具箱」新增 **Shizuku 靜默安裝 APK** 功能，支援直接選取 `.apk` 串流靜默安裝（含允許降級 `-d` 開關）。
 - **`v3.0.4`**：修正開機檢測通知在取得 Shizuku 授權後未移除的問題（輪詢每 30 秒主動呼叫 `ShizukuProvider.requestBinderForNonProviderProcess` 重新取得 Binder 並監聽授權結果，確認授權即自動撤除通知）。
 - **`v3.0.3`**：Bug 修復與精簡更新檢查（移除雲端資料夾檢查，僅保留 GitHub Releases 更新）。
@@ -87,9 +89,11 @@
    - **Double-Tap Power Key Camera (Vivo CN ROM Fix)**: Specifically built to restore double-tap power key camera launch on Vivo / iQOO OriginOS CN ROMs via Shizuku, supporting Always / Locked-only / Unlocked-only scopes and dual lockscreen modes.
    - **Vivo / iQOO CN Navigation Voice Fix (Google TTS)**: PC-free, Shizuku-driven one-tap repair specifically for Vivo CN ROMs (Standard direct mode & Deep Breakthrough mode).
    - **Shizuku Silent APK Installer**: Pick any `.apk` file on your device and install it silently via Shizuku without confirmation prompts (supports optional downgrade `-d` flag).
+   - **Developer / USB Notification Diagnostics & Gmail Export**: Uses Shizuku to dump active system notifications into a `.txt` diagnostic log (identifying brand-specific Developer Mode / USB Debugging notification packages & channels) and launches Gmail with the log attached so users can choose a recipient.
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.0.5`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.0.6`)
 
+- **`v3.0.6`**: Added **Developer / USB Notification Diagnostics & Gmail Log Export** to Tab 5 (Free Tools), using Shizuku to capture brand-specific system notification packages/channels into a `.txt` log and launch Gmail with the log attached.
 - **`v3.0.5`**: Added **Shizuku Silent APK Installer** to Tab 5 (Free Tools), streaming selected `.apk` files directly to `pm install` via Shizuku with optional downgrade (`-d`) support.
 - **`v3.0.4`**: Fixed Shizuku boot-watch notification not clearing after authorization (polls every 30s and actively refreshes Shizuku binder via `ShizukuProvider.requestBinderForNonProviderProcess`).
 - **`v3.0.3`**: Bug fixes and streamlined update checker (GitHub Releases only).
