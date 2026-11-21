@@ -45,8 +45,9 @@
    - **開發者／USB 通知檢測與 Gmail 寄出 Log**：透過 Shizuku 讀取系統目前通知並產生診斷 `.txt` Log（協助分辨不同品牌手機的開發者模式／USB 偵錯通知來源），可一鍵啟動 Gmail 並附上 Log 自選收件人寄出。
    - **陸版開啟 Google 地圖時間軸（640 dp 解法）**：透過 Shizuku 先記憶使用者原本 DPI 後切換為 `640 dp` 最小寬度、支援一鍵重開機、進入 Google 時間軸後一鍵精準還原原本 DPI（含解除 GMS／地圖背景定位與省電限制）。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.0.8`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.0.9`）
 
+- **`v3.0.9`**：徹底修正「環境隱身」導致無法開啟無線偵錯及使 Shizuku 失效的問題：將「偵測 Shizuku 自動開啟環境隱身」與「嚴格 ADB 歸零（`adb_wifi_enabled = 0`）」改為預設關閉（改用 `adb_enabled = 2` 不砍無線偵錯）；在「設定」與「Shizuku」之間切換或經過桌面時提供 15 秒保護期且不於桌面重套隱身，確保正常配對與保持 Shizuku 連線。
 - **`v3.0.8`**：修正 Tab 4「環境隱身」在各廠牌機型（全家／一般手機相容性）反覆觸發開發者模式開開關關提示的問題（修正鎖屏不再重複還原切換一般隱身、原始關閉狀態如實備份不再誤開、過濾系統暫時性視窗與 IME、新增系統反彈 60 秒冷卻保護）。
 - **`v3.0.7`**：Tab 5「免費工具箱」新增 **陸版開啟 Google 地圖時間軸（640 dp 解法）**，支援自動記憶原本 DPI 後套用 `640 dp`、確認重開機、一鍵精準還原原本 DPI，以及解除 GMS／地圖背景定位與省電限制。
 - **`v3.0.6`**：Tab 5「免費工具箱」新增 **開發者／USB 通知檢測與 Gmail 寄出 Log** 功能，透過 Shizuku 擷取不同品牌手機的系統通知資訊產生 Log 檔，並支援一鍵啟動 Gmail 附上 Log 自選收件人寄出。
@@ -95,8 +96,9 @@
    - **Developer / USB Notification Diagnostics & Gmail Export**: Uses Shizuku to dump active system notifications into a `.txt` diagnostic log (identifying brand-specific Developer Mode / USB Debugging notification packages & channels) and launches Gmail with the log attached so users can choose a recipient.
    - **CN ROM Google Maps Timeline Unlock (640 dp Workaround)**: Uses Shizuku to save the user's original DPI before switching to `640 dp` smallest width, supports one-tap reboot, restores the exact saved original DPI afterward, and unlocks GMS/Maps background location & battery whitelist.
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.0.8`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.0.9`)
 
+- **`v3.0.9`**: Fixed Environment Stealth blocking Wireless Debugging setup and killing Shizuku: `auto_start_on_shizuku` and `strict_adb_zero` (`adb_wifi_enabled = 0`) now default to `false` (using `adb_enabled = 2` so Shizuku stays alive), and added Launcher skip + 15-second grace window when switching between Settings and Shizuku.
 - **`v3.0.8`**: Fixed repeated "Developer Mode enabled/disabled" notification loops across OEM ROMs in Tab 4 (Environment Stealth): screen-off no longer toggles General Stealth off/on, original `0` developer state is backed up accurately without forcing `1`, transient system/IME windows are ignored, and a 60s bounce cooldown prevents retry loops.
 - **`v3.0.7`**: Added **CN ROM Google Maps Timeline Unlock (640 dp Workaround)** to Tab 5 (Free Tools), saving the user's original DPI before applying `640 dp`, offering reboot & exact DPI restoration, plus GMS/Maps location & battery-whitelist helpers.
 - **`v3.0.6`**: Added **Developer / USB Notification Diagnostics & Gmail Log Export** to Tab 5 (Free Tools), using Shizuku to capture brand-specific system notification packages/channels into a `.txt` log and launch Gmail with the log attached.
