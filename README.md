@@ -45,8 +45,9 @@
    - **開發者／USB 通知檢測與 Gmail 寄出 Log**：透過 Shizuku 讀取系統目前通知並產生診斷 `.txt` Log（協助分辨不同品牌手機的開發者模式／USB 偵錯通知來源），可一鍵啟動 Gmail 並附上 Log 自選收件人寄出。
    - **陸版開啟 Google 地圖時間軸（640 dp 解法）**：透過 Shizuku 先記憶使用者原本 DPI 後切換為 `640 dp` 最小寬度、支援一鍵重開機、進入 Google 時間軸後一鍵精準還原原本 DPI（含解除 GMS／地圖背景定位與省電限制）。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.1.4`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.1.5`）
 
+- **`v3.1.5`**：Tab 4 介面極簡化，將多餘子開關收斂為清楚說明內文（上方預設 `ADB=2`＋暫停無障礙、下方預設完整嚴格歸零＋關閉開發者與無障礙）；移除原本隱藏的「Vivo 雙開通知修復」區塊；更新「針對全家 APP」實測操作提示並將「立即手動還原 ADB 與開發者選項」移至 Tab 4 最下方。
 - **`v3.1.4`**：修正 `isA11yStealthActive` 旗標殘留導致指定嚴格 App 未觸發隱藏的 Bug，並針對全家等於啟動 15ms 內檢查的嚴格 App 加入「套用隱藏後自動重啟一次」機制；補齊設定備份／還原涵蓋全部 5 個分頁（含 Tab 5 免費工具箱與無障礙守護），另為所有 App 選擇清單加上轉圈過度動畫與背景快取加速。
 - **`v3.1.3`**：Tab 4 改為清晰的兩層式設計——上方「一般隱藏」支援隱藏 `ADB=2` ＋選配關閉無障礙（不動開發者選項與無線偵錯）；下方「嚴格／激進指定 App」整合關閉開發者選項與「激進歸零（`ADB=0`／`無線=0`）」選項，並修復同時啟用一般隱藏時進指定 App 跳過關閉開發者選項的 Bug。
 - **`v3.1.2`**：Tab 4「一般隱藏」補回客製化目標 App 選擇選單（僅隱藏 ADB／開發者，不關閉無障礙）；下方「攔截指定 App 偵測開發者模式與無障礙」新增「若上方無效再使用」說明，並於選好後自動檢查上方清單移除重複 App、保留於下方。
@@ -101,8 +102,9 @@
    - **Developer / USB Notification Diagnostics & Gmail Export**: Uses Shizuku to dump active system notifications into a `.txt` diagnostic log (identifying brand-specific Developer Mode / USB Debugging notification packages & channels) and launches Gmail with the log attached so users can choose a recipient.
    - **CN ROM Google Maps Timeline Unlock (640 dp Workaround)**: Uses Shizuku to save the user's original DPI before switching to `640 dp` smallest width, supports one-tap reboot, restores the exact saved original DPI afterward, and unlocks GMS/Maps background location & battery whitelist.
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.1.4`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.1.5`)
 
+- **`v3.1.5`**: Simplified Tab 4 UI by consolidating sub-switches into clear inline descriptions (upper tier: `ADB=2` + pause Accessibility; lower tier: turn off Developer Options + zero ADB + pause Accessibility), removed the hidden Vivo Dual-App notification repair section, updated the FamilyMart tip (1st/odd launch detected -> swipe away & 2nd/even launch passes; add to lower strict list), and moved "Restore ADB & Dev Options Now" to the bottom of Tab 4.
 - **`v3.1.4`**: Fixed stale `isA11yStealthActive` flag skipping strict per-app stealth, added one-shot auto-relaunch when hiding flags for apps that check `adb_enabled` within 15ms of launch (e.g., FamilyMart), expanded Settings Backup/Restore to cover all 5 tabs (including Tab 5 Free Tools & A11y Guard), and added a loading spinner + background cache for all app picker dialogs.
 - **`v3.1.3`**: Reorganized Tab 4 into a clear two-tier stealth design: upper General Stealth supports `ADB=2` + optional per-app Accessibility pause (keeping Developer Options & Wireless Debugging intact), while the lower Strict/Aggressive section consolidates "Turn off Developer Options" and "Aggressive Mode (`ADB=0` / `Wireless=0`)" and fixes the condition bug when General Stealth was active.
 - **`v3.1.2`**: Added a custom target app picker to Tab 4's upper General Stealth section (hides ADB/Dev only without turning off Accessibility), clarified the lower section is for apps where the upper stealth is ineffective, and automatically removes overlapping apps from the upper list when saved in the lower list.
