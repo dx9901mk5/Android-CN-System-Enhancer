@@ -45,8 +45,9 @@
    - **開發者／USB 通知檢測與 Gmail 寄出 Log**：透過 Shizuku 讀取系統目前通知並產生診斷 `.txt` Log（協助分辨不同品牌手機的開發者模式／USB 偵錯通知來源），可一鍵啟動 Gmail 並附上 Log 自選收件人寄出。
    - **陸版開啟 Google 地圖時間軸（640 dp 解法）**：透過 Shizuku 先記憶使用者原本 DPI 後切換為 `640 dp` 最小寬度、支援一鍵重開機、進入 Google 時間軸後一鍵精準還原原本 DPI（含解除 GMS／地圖背景定位與省電限制）。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.1.3`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.1.4`）
 
+- **`v3.1.4`**：修正 `isA11yStealthActive` 旗標殘留導致指定嚴格 App 未觸發隱藏的 Bug，並針對全家等於啟動 15ms 內檢查的嚴格 App 加入「套用隱藏後自動重啟一次」機制；補齊設定備份／還原涵蓋全部 5 個分頁（含 Tab 5 免費工具箱與無障礙守護），另為所有 App 選擇清單加上轉圈過度動畫與背景快取加速。
 - **`v3.1.3`**：Tab 4 改為清晰的兩層式設計——上方「一般隱藏」支援隱藏 `ADB=2` ＋選配關閉無障礙（不動開發者選項與無線偵錯）；下方「嚴格／激進指定 App」整合關閉開發者選項與「激進歸零（`ADB=0`／`無線=0`）」選項，並修復同時啟用一般隱藏時進指定 App 跳過關閉開發者選項的 Bug。
 - **`v3.1.2`**：Tab 4「一般隱藏」補回客製化目標 App 選擇選單（僅隱藏 ADB／開發者，不關閉無障礙）；下方「攔截指定 App 偵測開發者模式與無障礙」新增「若上方無效再使用」說明，並於選好後自動檢查上方清單移除重複 App、保留於下方。
 - **`v3.1.1`**：Tab 4「針對指定 App 隱藏」新增獨立開關「進入指定 App 時一併關閉開發者選項（離開自動還原）」，並附上「建議全家／麥當勞等極嚴格 App 使用、原本方法無法通過再開啟」說明；另新增開機殘留狀態自動還原保護，確保重開機後開發者選項與無障礙不會卡在關閉狀態。
@@ -100,8 +101,9 @@
    - **Developer / USB Notification Diagnostics & Gmail Export**: Uses Shizuku to dump active system notifications into a `.txt` diagnostic log (identifying brand-specific Developer Mode / USB Debugging notification packages & channels) and launches Gmail with the log attached so users can choose a recipient.
    - **CN ROM Google Maps Timeline Unlock (640 dp Workaround)**: Uses Shizuku to save the user's original DPI before switching to `640 dp` smallest width, supports one-tap reboot, restores the exact saved original DPI afterward, and unlocks GMS/Maps background location & battery whitelist.
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.1.3`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.1.4`)
 
+- **`v3.1.4`**: Fixed stale `isA11yStealthActive` flag skipping strict per-app stealth, added one-shot auto-relaunch when hiding flags for apps that check `adb_enabled` within 15ms of launch (e.g., FamilyMart), expanded Settings Backup/Restore to cover all 5 tabs (including Tab 5 Free Tools & A11y Guard), and added a loading spinner + background cache for all app picker dialogs.
 - **`v3.1.3`**: Reorganized Tab 4 into a clear two-tier stealth design: upper General Stealth supports `ADB=2` + optional per-app Accessibility pause (keeping Developer Options & Wireless Debugging intact), while the lower Strict/Aggressive section consolidates "Turn off Developer Options" and "Aggressive Mode (`ADB=0` / `Wireless=0`)" and fixes the condition bug when General Stealth was active.
 - **`v3.1.2`**: Added a custom target app picker to Tab 4's upper General Stealth section (hides ADB/Dev only without turning off Accessibility), clarified the lower section is for apps where the upper stealth is ineffective, and automatically removes overlapping apps from the upper list when saved in the lower list.
 - **`v3.1.1`**: Added an independent "Also turn off Developer Options when entering selected apps" toggle under Tab 4's per-app stealth section (with guidance for strict apps like FamilyMart & McDonald's when the default ADB=2 + Accessibility hide isn't enough), plus automatic boot-time state restoration if the device reboots while inside a hidden app.
