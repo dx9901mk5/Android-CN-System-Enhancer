@@ -41,7 +41,7 @@
 
 5. **Tab 5 — 穿透式捲動翻譯（仿 Google 捲動翻譯）〔Pro / Premium 專屬〕**
    - 🎬 **實機操作示範影片**：https://youtube.com/shorts/1QtWvg_pKqc
-   - **免 Root・Google 翻譯＋ML Kit 視覺雙引擎驅動**：解決陸版 CN ROM 因唯讀系統屬性無法使用原生 Google 畫圈捲動翻譯的痛點。將翻譯文字直接原位覆蓋於原文座標正上方，手指可直接觸控穿透上下滑動網頁、社群、漫畫與 App，滑動停頓後自動即時重翻！啟動後懸浮膠囊支援「按住 `👁` 透視原文、切換來源／目標語系、手動重翻」，並支援控制中心快捷磁貼一鍵開關。
+   - **免 Root・Google 翻譯全球百餘語系自動偵測＋ML Kit 視覺雙引擎驅動（翻譯速度與台版原生 Google 捲動翻譯相等）**：不僅適用於陸版 CN ROM 手機，**亦支援「國際版／台版但系統無內建捲動翻譯功能」的所有 Android 手機使用**！可像 Google 翻譯一樣自動判斷全球所有可用語言（英、日、韓、歐語、泰、越、俄、阿、印、簡繁等），將譯文直接原位覆蓋於原文座標正上方，手指可直接觸控穿透上下滑動並於停頓後自動即時重翻；開啟後持續鎖定翻譯、點擊螢幕絕不取消，僅透過懸浮膠囊右側 `✕` 按鈕或 App 本體開關關閉。
    - **獨立啟動器捷徑 App「仿G 捲動」**：提供一鍵產生名為 **「仿G 捲動」**（簡中：`仿G 滚动` / 英文：`G-Scroll`）的極小獨立啟動器 App，方便各家邊緣手勢 App、系統智慧側邊欄、自訂桌面啟動器於「啟動應用程式」清單中直接選取綁定；使用者可隨時單獨移除「仿G 捲動」（本體 App 自動偵測存在狀態），且移除本體 App 時亦會自動一併移除。
    - **方案與既有購買者權益**：開放 **專業 Pro（NT\$260）** 與 **頂級 Premium（NT\$380）** 用戶開通（進階 Plus 維持 NT\$120，加購升級擴充為 NT\$150）；**既有已購買 Pro 與 Premium 的用戶直接享有開通資格，不受價格調整影響**。
 
@@ -57,8 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.0`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.1`）
 
+- **`v3.2.1`**：① 徹底修復「穿透式捲動翻譯」點擊螢幕時因外部觸控偵測／截圖冷卻與同 App 彈窗事件導致翻譯臨時消失、需再點一下才恢復的問題——改為全程鎖定持續翻譯，**唯一關閉入口僅限懸浮膠囊右側「✕」按鈕與 App 本體開關**；② 預設語系升級為**全球語言自動偵測（同 Google 翻譯自動判斷全球 130+ 種可用語言與簡繁轉換）**，並補充說明**國際版／台版無內建捲動翻譯之手機亦可直接使用**；③ 設定內新增 **「橘色灰黑底主題（Orange Dark）」**；④ 強化設定備份與還原，確保 **Tab 1～6 所有頁面參數、外觀主題（含橘色灰黑底）與介面語言** 100% 完整備份並於還原時即時重載生效。
 - **`v3.2.0`**：新增獨立 **Tab 5「穿透式捲動翻譯（仿 Google 捲動翻譯）」**（Pro／Premium 專屬，Google 翻譯＋ML Kit 雙引擎免 Root 觸控穿透原位翻譯，支援產生獨立啟動器捷徑 App **「仿G 捲動」** 供各家邊緣手勢與系統側邊欄選取，可單獨移除、移除本體亦自動一併移除）；原免費工具箱移至 **Tab 6** 並於底部補上三大精選陸版補強友情連結（`VIVO_Notification_Fix`、`MiCTS`、`Bada`）；同步調整方案價格（Plus 維持 NT\$120、Pro NT\$260、Premium NT\$380、加購升級 NT\$150，**既有已購買 Pro／Premium 用戶不受影響直接開通**），並完整校對繁體中文、簡體中文、英文、日文全介面語系一致性。
 
 - **`v3.1.6`**：Tab 5「免費工具箱」新增兩項實用工具——① **Vivo 小螢幕模式自動關閉／恢復無障礙**（自動處理 `com.vivo.minscreen`「功能衝突」彈窗點擊關閉、進入小螢幕清空無障礙、退出 `minscreen_state_switch=0` 自動全數恢復）；② **自動移除 Android 系統警示通知**（仿照 MacroDroid 連環清除腳本，提供可打勾選擇的 App 清單如 FanRecentGesture／Edge 等，於收到通知與每次點亮螢幕時執行 0s／1s／2s 三次清除）。另移除 Tab 5 各卡片標題多餘的「（永久免費）」後綴，僅保留頁頂永久免費橫幅。
@@ -112,7 +113,7 @@
 
 5. **Tab 5 — Pass-Through Scroll Translate (`Google-Style Live Translate`・Pro / Premium Exclusive)**
    - 🎬 **Live Demo Video**: https://youtube.com/shorts/1QtWvg_pKqc
-   - **Root-Free・Google Translate + ML Kit Vision OCR Dual Engine**: Overlays translated text directly over original screen coordinates while allowing touch gestures to pass straight through—automatically re-translating as you scroll! Includes a draggable floating control capsule (hold `👁` to peek original text, switch source/target languages, manual refresh) and a Control Center Quick Settings Tile.
+   - **Root-Free・Global 130+ Language Auto-Detect + ML Kit Vision OCR Dual Engine (Matching Native Google Scroll Translate Speed)**: Works on **both CN ROM phones AND Global/International Android phones that lack built-in Scroll Translate**! Automatically detects all 130+ languages supported by Google Translate and overlays translated text directly over original screen coordinates with full touch pass-through. Stays continuously active without ever cancelling on screen taps—only the capsule's `✕` button or the App's Tab 5 switch turns it off.
    - **Standalone Launcher Shortcut App (`G-Scroll` / `仿G 捲動`)**: Generates a tiny standalone launcher app so any edge-gesture app, system smart sidebar, or custom launcher can bind it under "Launch Application". Users can uninstall it individually anytime (detected dynamically by the main app), and uninstalling the main app automatically removes it together.
    - **Licensing & Existing Buyers**: Unlocked for **Pro (NT\$260)** and **Premium (NT\$380)** users (Plus remains NT\$120; +1 Tier Upgrade Add-on is NT\$150). **Existing Pro and Premium buyers retain full entitlement automatically without price re-evaluation.**
 
@@ -123,8 +124,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.0`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.1`)
 
+- **`v3.2.1`**: (1) Fixed Pass-Through Scroll Translate temporarily hiding/cancelling on screen taps due to outside-touch screenshot cooldown & same-app popup events—translation now stays continuously locked on until explicitly closed via the capsule's `✕` button or the App's Tab 5 switch; (2) Upgraded default detection to **Global Language Auto-Detect (all 130+ Google Translate languages)** and documented support for **Global/International Android phones without built-in Scroll Translate**; (3) Added **Orange on Dark Gray (`橘色灰黑底`)** theme in Settings; (4) Verified and enhanced **full 6-Tab + Theme/Language Settings Backup & Restore** with automatic state materialization and instant UI reload on restore.
 - **`v3.2.0`**: Introduced dedicated **Tab 5 "Pass-Through Scroll Translate (Google-Style Live Translate)"** (exclusive to Pro & Premium users; Google-powered dual-engine in-place touch-pass-through translation + one-click generator for standalone **`G-Scroll` / `仿G 捲動`** launcher shortcut app for edge gestures & smart sidebars, individually removable and auto-removed with the host app); moved Free Tools to **Tab 6** and added three recommended CN ROM companion project links (`VIVO_Notification_Fix`, `MiCTS`, `Bada`); updated pricing (Plus unchanged at NT\$120, Pro NT\$260, Premium NT\$380, +1 Tier Add-on NT\$150 — **existing Pro & Premium buyers retain full access without re-judging**), with complete UI localization across Traditional Chinese, Simplified Chinese, English, and Japanese.
 
 - **`v3.1.6`**: Added two new tools to Tab 5 (Free Tools): (1) **Vivo Mini-Screen Mode Accessibility Guard** (auto-snapshots Accessibility Services, clicks "關閉" on the `com.vivo.minscreen` conflict dialog, clears remaining services on `minscreen_state_switch=1`, and restores all on exit `0`), and (2) **Auto-Dismiss Android System Warning Notifications** (multi-select app picker with auto-selected FanRecent/Edge apps; clears matching system alerts on notification arrival and every screen-on event at 0s/1s/2s). Also removed redundant "(Permanently Free)" suffixes from individual Tab 5 card titles while keeping the top banner.
