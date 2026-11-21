@@ -13,14 +13,15 @@
 | 管道 / Channel | 連結 / URL | 說明 / Notes |
 | :--- | :--- | :--- |
 | **GitHub Releases** | https://github.com/dx9901mk5/Android-CN-System-Enhancer/releases | 最新穩定版與完整發行說明 / Latest stable releases & release notes |
+| **YouTube 實機示範 / Demo Video** | https://youtube.com/shorts/1QtWvg_pKqc | CN陸版啟用仿捲動翻譯(Google驅動) / Enable Google-Powered Scroll Translate on CN ROM |
 
 ---
 
 ## 繁體中文說明
 
-**Android 補強整合 CN（`Android_Enhancer_CN`）** 是一款專為陸版 Android 手機／平板（OriginOS、ColorOS、HyperOS 等）打造的**四合一系統補強整合工具**。採用頂部文件資料夾樣式分頁與左右滑動切換，支援**繁體中文、簡體中文、英文、日文**四語系即時切換，並支援 App 內自動檢測更新與進度條直接下載安裝。
+**Android 補強整合 CN（`Android_Enhancer_CN`）** 是一款專為陸版 Android 手機／平板（OriginOS、ColorOS、HyperOS 等）打造的**六分頁系統補強整合工具**。採用頂部文件資料夾樣式分頁與左右滑動切換，支援**繁體中文、簡體中文、英文、日文**四語系即時切換，並支援 App 內自動檢測更新與進度條直接下載安裝。
 
-### ✨ 四大核心功能分頁
+### ✨ 六大核心功能分頁
 
 1. **Tab 1 — 來電音樂（CallMusicGuard）**
    - 監聽 LINE、Telegram、Messenger 等通訊軟體來電通知，通話時自動暫停音樂，掛斷後自動恢復播放。
@@ -38,14 +39,27 @@
    - **反偵測 ADB 與無障礙隱藏**：進入一般 App 時自動隱藏 `adb_enabled`、`adb_wifi_enabled` 與 `development_settings_enabled`（預設自動排除本身需使用 Shizuku 的 App）；亦可自訂勾選需同時隱藏「開發者模式與無障礙」的目標 App（如行動支付／銀行／會員 App），離開 App 或關閉螢幕時自動還原。
    - **自動消除 vivo 開發模式通知**：自動清除系統因切換開發者模式所彈出的風險提醒通知。
 
-5. **Tab 5 — 免費工具箱（永久免費・專為 Vivo / iQOO 陸版 ROM 設計 / Permanently Free・For Vivo CN ROM）**
-   - **雙擊電源鍵啟動相機（Vivo 陸版修復）**：專為 Vivo / iQOO OriginOS 陸版無電源鍵雙擊快啟相機之系統限制打造，透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
+5. **Tab 5 — 穿透式捲動翻譯（仿 Google 捲動翻譯）〔Pro / Premium 專屬〕**
+   - 🎬 **實機操作示範影片**：https://youtube.com/shorts/1QtWvg_pKqc
+   - **免 Root・Google 翻譯＋ML Kit 視覺雙引擎驅動**：解決陸版 CN ROM 因唯讀系統屬性無法使用原生 Google 畫圈捲動翻譯的痛點。將翻譯文字直接原位覆蓋於原文座標正上方，手指可直接觸控穿透上下滑動網頁、社群、漫畫與 App，滑動停頓後自動即時重翻！啟動後懸浮膠囊支援「按住 `👁` 透視原文、切換來源／目標語系、手動重翻」，並支援控制中心快捷磁貼一鍵開關。
+   - **獨立啟動器捷徑 App「仿G 捲動」**：提供一鍵產生名為 **「仿G 捲動」**（簡中：`仿G 滚动` / 英文：`G-Scroll`）的極小獨立啟動器 App，方便各家邊緣手勢 App、系統智慧側邊欄、自訂桌面啟動器於「啟動應用程式」清單中直接選取綁定；使用者可隨時單獨移除「仿G 捲動」（本體 App 自動偵測存在狀態），且移除本體 App 時亦會自動一併移除。
+   - **方案與既有購買者權益**：開放 **專業 Pro（NT\$260）** 與 **頂級 Premium（NT\$380）** 用戶開通（進階 Plus 維持 NT\$120，加購升級擴充為 NT\$150）；**既有已購買 Pro 與 Premium 的用戶直接享有開通資格，不受價格調整影響**。
+
+6. **Tab 6 — 免費工具箱（永久免費・專為 Vivo / iQOO 陸版 ROM 設計）＋ 推薦友情連結**
+   - **雙擊電源鍵啟動相機（Vivo 陸版修復）**：透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
    - **Vivo / iQOO 陸版導航語音修復（Google TTS）**：免接電腦，直接透過 Shizuku 一鍵修復 Vivo CN ROM 導航語音識別（標準直接修復／深度突破修復）。
    - **Shizuku 靜默安裝 APK**：選取手機內任意 `.apk` 安裝檔，透過 Shizuku 權限免點擊確認視窗直接靜默安裝（支援覆蓋、測試版與選配降級 `-d` 安裝）。
-   - **開發者／USB 通知檢測與 Gmail 寄出 Log**：透過 Shizuku 讀取系統目前通知並產生診斷 `.txt` Log（協助分辨不同品牌手機的開發者模式／USB 偵錯通知來源），可一鍵啟動 Gmail 並附上 Log 自選收件人寄出。
-   - **陸版開啟 Google 地圖時間軸（640 dp 解法）**：透過 Shizuku 先記憶使用者原本 DPI 後切換為 `640 dp` 最小寬度、支援一鍵重開機、進入 Google 時間軸後一鍵精準還原原本 DPI（含解除 GMS／地圖背景定位與省電限制）。
+   - **開發者／USB 通知檢測與 Gmail 寄出 Log**：透過 Shizuku 讀取系統目前通知並產生診斷 `.txt` Log，可一鍵啟動 Gmail 並附上 Log 自選收件人寄出。
+   - **陸版開啟 Google 地圖時間軸（640 dp 解法）**：透過 Shizuku 記憶原本 DPI 後切換為 `640 dp`、支援一鍵重開機、開啟時間軸後精準還原原本 DPI（含解除 GMS／地圖定位與省電限制）。
+   - **Vivo 小螢幕模式自動關閉／恢復無障礙** ＆ **自動移除 Android 系統警示通知**（收到通知與每次點亮螢幕時 0s／1s／2s 三次連環清除）。
+   - **精選陸版補強友情連結**：
+     1. **Vivo 陸版 CN ROM 雙開通知修復**（飛雪連天／冷大）：https://github.com/Reeky-ux/VIVO_Notification_Fix
+     2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
+     3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.1.6`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.0`）
+
+- **`v3.2.0`**：新增獨立 **Tab 5「穿透式捲動翻譯（仿 Google 捲動翻譯）」**（Pro／Premium 專屬，Google 翻譯＋ML Kit 雙引擎免 Root 觸控穿透原位翻譯，支援產生獨立啟動器捷徑 App **「仿G 捲動」** 供各家邊緣手勢與系統側邊欄選取，可單獨移除、移除本體亦自動一併移除）；原免費工具箱移至 **Tab 6** 並於底部補上三大精選陸版補強友情連結（`VIVO_Notification_Fix`、`MiCTS`、`Bada`）；同步調整方案價格（Plus 維持 NT\$120、Pro NT\$260、Premium NT\$380、加購升級 NT\$150，**既有已購買 Pro／Premium 用戶不受影響直接開通**），並完整校對繁體中文、簡體中文、英文、日文全介面語系一致性。
 
 - **`v3.1.6`**：Tab 5「免費工具箱」新增兩項實用工具——① **Vivo 小螢幕模式自動關閉／恢復無障礙**（自動處理 `com.vivo.minscreen`「功能衝突」彈窗點擊關閉、進入小螢幕清空無障礙、退出 `minscreen_state_switch=0` 自動全數恢復）；② **自動移除 Android 系統警示通知**（仿照 MacroDroid 連環清除腳本，提供可打勾選擇的 App 清單如 FanRecentGesture／Edge 等，於收到通知與每次點亮螢幕時執行 0s／1s／2s 三次清除）。另移除 Tab 5 各卡片標題多餘的「（永久免費）」後綴，僅保留頁頂永久免費橫幅。
 - **`v3.1.5`**：Tab 4 介面極簡化，將多餘子開關收斂為清楚說明內文（上方預設 `ADB=2`＋暫停無障礙、下方預設完整嚴格歸零＋關閉開發者與無障礙）；移除原本隱藏的「Vivo 雙開通知修復」區塊；更新「針對全家 APP」實測操作提示並將「立即手動還原 ADB 與開發者選項」移至 Tab 4 最下方。
@@ -77,9 +91,9 @@
 
 ## English
 
-**Android CN System Enhancer (`Android_Enhancer_CN`)** is a **4-in-1 Android system enhancement suite** built for Chinese-ROM smartphones and tablets (OriginOS, ColorOS, HyperOS, etc.). It features top document-folder-style tabs with horizontal swipe navigation, 4-language live switching (`zh-TW`, `zh-CN`, `EN`, `JA`), and in-app update downloading with a bottom progress bar.
+**Android CN System Enhancer (`Android_Enhancer_CN`)** is a **6-tab Android system enhancement suite** built for Chinese-ROM smartphones and tablets (OriginOS, ColorOS, HyperOS, etc.). It features top document-folder-style tabs with horizontal swipe navigation, 4-language live switching (`zh-TW`, `zh-CN`, `EN`, `JA`), and in-app update downloading with a bottom progress bar.
 
-### ✨ Four Core Modules
+### ✨ Six Feature Tabs
 
 1. **Tab 1 — Call Music Guard (`CallMusicGuard`)**
    - Automatically pauses music during incoming VoIP calls (LINE, Telegram, Messenger, etc.) and resumes playback after the call ends.
@@ -96,14 +110,22 @@
    - **Anti-ADB & Accessibility Hiding**: Hides `adb_enabled`, `adb_wifi_enabled`, and `development_settings_enabled` for regular apps while excluding Shizuku-dependent apps by default. Supports a custom app list to hide both Developer Options/ADB and Accessibility Services, restoring them automatically on exit or screen off.
    - **Auto-Dismiss System Dev Warnings**: Automatically clears repetitive vivo/system "Developer Mode active" warning notifications.
 
-5. **Tab 5 — Free Tools (`Permanently Free・Tailored for Vivo / iQOO CN ROM`)**
-   - **Double-Tap Power Key Camera (Vivo CN ROM Fix)**: Specifically built to restore double-tap power key camera launch on Vivo / iQOO OriginOS CN ROMs via Shizuku, supporting Always / Locked-only / Unlocked-only scopes and dual lockscreen modes.
-   - **Vivo / iQOO CN Navigation Voice Fix (Google TTS)**: PC-free, Shizuku-driven one-tap repair specifically for Vivo CN ROMs (Standard direct mode & Deep Breakthrough mode).
-   - **Shizuku Silent APK Installer**: Pick any `.apk` file on your device and install it silently via Shizuku without confirmation prompts (supports optional downgrade `-d` flag).
-   - **Developer / USB Notification Diagnostics & Gmail Export**: Uses Shizuku to dump active system notifications into a `.txt` diagnostic log (identifying brand-specific Developer Mode / USB Debugging notification packages & channels) and launches Gmail with the log attached so users can choose a recipient.
-   - **CN ROM Google Maps Timeline Unlock (640 dp Workaround)**: Uses Shizuku to save the user's original DPI before switching to `640 dp` smallest width, supports one-tap reboot, restores the exact saved original DPI afterward, and unlocks GMS/Maps background location & battery whitelist.
+5. **Tab 5 — Pass-Through Scroll Translate (`Google-Style Live Translate`・Pro / Premium Exclusive)**
+   - 🎬 **Live Demo Video**: https://youtube.com/shorts/1QtWvg_pKqc
+   - **Root-Free・Google Translate + ML Kit Vision OCR Dual Engine**: Overlays translated text directly over original screen coordinates while allowing touch gestures to pass straight through—automatically re-translating as you scroll! Includes a draggable floating control capsule (hold `👁` to peek original text, switch source/target languages, manual refresh) and a Control Center Quick Settings Tile.
+   - **Standalone Launcher Shortcut App (`G-Scroll` / `仿G 捲動`)**: Generates a tiny standalone launcher app so any edge-gesture app, system smart sidebar, or custom launcher can bind it under "Launch Application". Users can uninstall it individually anytime (detected dynamically by the main app), and uninstalling the main app automatically removes it together.
+   - **Licensing & Existing Buyers**: Unlocked for **Pro (NT\$260)** and **Premium (NT\$380)** users (Plus remains NT\$120; +1 Tier Upgrade Add-on is NT\$150). **Existing Pro and Premium buyers retain full entitlement automatically without price re-evaluation.**
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.1.6`)
+6. **Tab 6 — Free Tools (`Permanently Free・Tailored for Vivo / iQOO CN ROM`) & Recommended Links**
+   - **Double-Tap Power Key Camera (Vivo CN ROM Fix)**, **Vivo / iQOO CN Navigation Voice Fix (Google TTS)**, **Shizuku Silent APK Installer**, **Developer / USB Notification Diagnostics & Gmail Export**, **CN ROM Google Maps Timeline Unlock (640 dp Workaround)**, **Vivo Mini-Screen Mode Accessibility Guard**, and **Auto-Dismiss Android System Warning Notifications**.
+   - **Recommended Companion Projects (Friend Links)**:
+     1. **Vivo CN ROM Dual-App Notification Fix** (by Reeky-ux / 飛雪連天 冷大): https://github.com/Reeky-ux/VIVO_Notification_Fix
+     2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
+     3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
+
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.0`)
+
+- **`v3.2.0`**: Introduced dedicated **Tab 5 "Pass-Through Scroll Translate (Google-Style Live Translate)"** (exclusive to Pro & Premium users; Google-powered dual-engine in-place touch-pass-through translation + one-click generator for standalone **`G-Scroll` / `仿G 捲動`** launcher shortcut app for edge gestures & smart sidebars, individually removable and auto-removed with the host app); moved Free Tools to **Tab 6** and added three recommended CN ROM companion project links (`VIVO_Notification_Fix`, `MiCTS`, `Bada`); updated pricing (Plus unchanged at NT\$120, Pro NT\$260, Premium NT\$380, +1 Tier Add-on NT\$150 — **existing Pro & Premium buyers retain full access without re-judging**), with complete UI localization across Traditional Chinese, Simplified Chinese, English, and Japanese.
 
 - **`v3.1.6`**: Added two new tools to Tab 5 (Free Tools): (1) **Vivo Mini-Screen Mode Accessibility Guard** (auto-snapshots Accessibility Services, clicks "關閉" on the `com.vivo.minscreen` conflict dialog, clears remaining services on `minscreen_state_switch=1`, and restores all on exit `0`), and (2) **Auto-Dismiss Android System Warning Notifications** (multi-select app picker with auto-selected FanRecent/Edge apps; clears matching system alerts on notification arrival and every screen-on event at 0s/1s/2s). Also removed redundant "(Permanently Free)" suffixes from individual Tab 5 card titles while keeping the top banner.
 - **`v3.1.5`**: Simplified Tab 4 UI by consolidating sub-switches into clear inline descriptions (upper tier: `ADB=2` + pause Accessibility; lower tier: turn off Developer Options + zero ADB + pause Accessibility), removed the hidden Vivo Dual-App notification repair section, updated the FamilyMart tip (1st/odd launch detected -> swipe away & 2nd/even launch passes; add to lower strict list), and moved "Restore ADB & Dev Options Now" to the bottom of Tab 4.
