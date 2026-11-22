@@ -57,7 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.5`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.6`）
+
+- **`v3.3.6`**：**Tab 6 新增「輸入法系統顯示／隱藏與預設管理」**：列出手機所有已安裝輸入法（含圖示與狀態），支援透過 Shizuku 切換各輸入法在系統中的顯示（啟用）／隱藏（停用），並提供一鍵設定預設輸入法按鈕。
 
 - **`v3.3.5`**：**大螢幕／橫向自適應雙欄並排排版**：於手機橫向、摺疊機內螢幕展開、8 吋／10 吋平板橫向與 Pixelbook 狀態下，各分頁功能卡片自動改為左右雙欄並排顯示（直向手機維持單欄直排）。
 
@@ -140,7 +142,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.5`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.6`)
+
+- **`v3.3.6`**: **Added Input Method (IME) Visibility & Default Manager in Tab 6**: Lists all installed keyboards with icons and status, lets you toggle whether each IME is shown (enabled) or hidden (disabled) in the system via Shizuku, and includes a one-tap Set Default button.
 
 - **`v3.3.5`**: **Responsive 2-column side-by-side card layout**: Automatically arranges each tab's feature cards into left/right columns on phone landscape, unfolded foldable inner screens, 8"/10" tablet landscape, and Pixelbook windows (while preserving single-column portrait on phones).
 
