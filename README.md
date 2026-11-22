@@ -57,7 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.9`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.0`）
+
+- **`v3.4.0`**：**強化穿透式翻譯「進多工選最近 App」返回機制**：若非於啟動器首頁觸發且啟動後掉回桌面，自動喚起系統多工畫面並點擊最近使用的 App 卡片回到原頁面；若啟動時原本就在啟動器首頁，則維持於首頁不進入多工程序。
 
 - **`v3.3.9`**：① **穿透式翻譯改用多工任務切換回到剛使用的 App**：於啟動器狀態啟動時維持在啟動器；若啟動前在一般 App 內而啟動後誤掉回桌面，改以 Shizuku `moveTaskToFront`（或無障礙多工切換備援）直接切回原 App 的既有任務與畫面，不再重新開啟 App 首頁；② **穿透式翻譯控制條支援全條任意位置拖曳**：按住控制條任一處拖動即可移動並記憶位置，單點各按鈕仍維持原本功能。
 
@@ -148,7 +150,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.9`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.0`)
+
+- **`v3.4.0`**: **Improved Recents card tap restoration for Pass-Through Translate**: Automatically opens system Recents and taps the most recently used app card if a transient Home drop occurs after launch (while skipping Recents completely when started directly on the Launcher/Home screen).
 
 - **`v3.3.9`**: (1) **Recents-based task restoration for Pass-Through Translate**: Stays on the launcher when started from Home; when started from an app and transiently dropped to Home, restores the exact previous task via Shizuku `moveTaskToFront` (with Accessibility Recents fallback) without resetting the app screen; (2) **Full-bar dragging on the Translate bar**: Drag anywhere on the floating capsule bar to reposition and save its location.
 
