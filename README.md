@@ -48,7 +48,7 @@
 6. **Tab 6 — 免費工具箱（永久免費・專為 Vivo / iQOO 陸版 ROM 設計）＋ 推薦友情連結**
    - **雙擊電源鍵啟動相機（Vivo 陸版修復）**：透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
    - **Vivo / iQOO 陸版導航語音修復（Google TTS）**：免接電腦，直接透過 Shizuku 一鍵修復 Vivo CN ROM 導航語音識別（標準直接修復／深度突破修復）。
-   - **Shizuku 靜默安裝 APK**：選取手機內任意 `.apk` 安裝檔，透過 Shizuku 權限免點擊確認視窗直接靜默安裝（支援覆蓋、測試版與選配降級 `-d` 安裝）。
+   - **Shizuku 靜默安裝 APK**：選取手機內任意 `.apk` 安裝檔，透過 Shizuku 權限免點擊確認視窗直接靜默安裝（支援覆蓋、測試版、選配降級 `-d` 與**宣告安裝來源為 Google Play 商店 `-i com.android.vending`，適用 Android Auto**）。
    - **開發者／USB 通知檢測與 Gmail 寄出 Log**：透過 Shizuku 讀取系統目前通知並產生診斷 `.txt` Log，可一鍵啟動 Gmail 並附上 Log 自選收件人寄出。
    - **陸版開啟 Google 地圖時間軸（640 dp 解法）**：透過 Shizuku 記憶原本 DPI 後切換為 `640 dp`、支援一鍵重開機、開啟時間軸後精準還原原本 DPI（含解除 GMS／地圖定位與省電限制）。
    - **Vivo 小螢幕模式自動關閉／恢復無障礙** ＆ **自動移除 Android 系統警示通知**（收到通知與每次點亮螢幕時 0s／1s／2s 三次連環清除）。
@@ -57,8 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.9`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.0`）
 
+- **`v3.3.0`**：**Tab 6「Shizuku 靜默安裝 APK」新增「宣告安裝來源為 Google Play 商店 (`-i com.android.vending`)」開關**：開啟後透過 Shizuku 靜默安裝 `.apk` 時將一併傳入 `-i com.android.vending`，讓系統與 Android Auto 判定為 Google Play 商店安裝來源（例如安裝 `AATube-Caster` 等車機相關 App）。
 - **`v3.2.9`**：① **Tab 6 新增方案 B「極速畫圈搜尋（預熱防延遲版）」捷徑／磁貼／獨立啟動器 App「極速畫圈」**：先於背景 90ms 預熱 `AssistantHandoffActivity` 再呼叫 `VisTrigger`，徹底繞過 Vivo OriginOS 3 秒冷交接卡頓；可一鍵產生獨立啟動器 App「極速畫圈」供各家手勢「指定應用程式啟動」選取，本體動態偵測安裝狀態且移除本體時一併自動移除（覆蓋更新不影響）；② **修復 GitHub API 403 限流導致 App 無法檢查更新**：新增 `github.com/.../releases/latest` 網頁跳轉直連備援；③ **APK 體積瘦身**：鎖定 `arm64-v8a` 大幅縮減下載時間。
 - **`v3.2.8`**：**Tab 5 新增「預載加速語言包」勾選下載與最新版本檢查**：可自由勾選預先下載常用語系（中、英、日、韓、泰、越、法、德、西、俄等 15 語）本機 ML Kit 神經翻譯包與 GMS 視覺 OCR 模組；已下載的語系組合於捲動翻譯時優先走本機 ~20ms 極速翻譯（免等網路延遲），並支援一鍵向 Google 檢查更新至最新版。
 - **`v3.2.7`**：**App 覆蓋更新與啟動時全量自動回傳試算表登記**：無論是 `CN2M-` / `CN3M-` / `CNPRO-` 或 `CNFAM-` / `CNVIP` 等所有已兌換序號，於 App 覆蓋更新（`MY_PACKAGE_REPLACED`）或啟動時皆自動將「兌換碼、已登記 Google 帳號與裝置硬體 ID」回傳至雲端試算表完成登記與累計。
@@ -132,8 +133,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.9`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.0`)
 
+- **`v3.3.0`**: **Added "Declare Installer as Google Play Store (`-i com.android.vending`)" toggle in Tab 6 Shizuku Silent APK Installer**: Allows installing APKs (such as Android Auto companion apps like `AATube-Caster`) via Shizuku while declaring `com.android.vending` as the installer package.
 - **`v3.2.9`**: (1) **Added Option B "Fast Circle to Search" Shortcut, Quick Tile & Standalone Launcher App (`Fast Circle` / `極速畫圈`) in Tab 6**: Pre-warms `AssistantHandoffActivity` (~90ms) before triggering `VisTrigger` to eliminate the ~3s Vivo OriginOS cold-handoff lag; supports generating a standalone launcher app for gesture apps ("Launch Application"), dynamically detected by the main app and auto-removed together upon uninstall (unaffected by updates); (2) **Fixed GitHub API 403 Rate-Limit Update Failures**: Added web-redirect fallback (`releases/latest`) in `UpdateChecker`; (3) **Slimmed APK ABI to `arm64-v8a`** for much faster in-app downloads.
 - **`v3.2.8`**: **Added User-Selectable Preload Language Packs & Update Checker in Tab 5**: Users can select and pre-download on-device ML Kit translation packs (15 languages including ZH, EN, JA, KO, TH, VI, FR, DE, ES, RU, etc.) plus GMS OCR modules to accelerate Scroll Translate (~20ms on-device inference without network wait), and check/update all packs & OCR modules to the latest Google version.
 - **`v3.2.7`**: **Auto-Report All Redeemed Codes, Google Account & Device ID on App Update**: Automatically syncs every active redeemed code (`CN2M-`/`CN3M-`/`CNPRO-`/`CNFAM-`/`CNVIP*`/Gumroad), bound Google account, and Widevine hardware ID to the cloud sheet upon app update (`MY_PACKAGE_REPLACED`) or launch.
