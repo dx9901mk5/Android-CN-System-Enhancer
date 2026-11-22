@@ -57,8 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.6`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.7`）
 
+- **`v3.2.7`**：**App 覆蓋更新與啟動時全量自動回傳試算表登記**：無論是 `CN2M-` / `CN3M-` / `CNPRO-` 或 `CNFAM-` / `CNVIP` 等所有已兌換序號，於 App 覆蓋更新（`MY_PACKAGE_REPLACED`）或啟動時皆自動將「兌換碼、已登記 Google 帳號與裝置硬體 ID」回傳至雲端試算表完成登記與累計。
 - **`v3.2.6`**：**補齊既有已兌換裝置自動結合 Google 帳號登記雲端**：針對先前已輸入過 10 台版兌換碼（`CN2M-` / `CN3M-` / `CNPRO-`）的裝置，啟動 App 或於「透過 Google 帳號還原授權」輸入 Email 時，自動將該裝置硬體指紋與 Google 帳號同步登記至雲端授權表單（納入 10 台裝置累計與去重）。
 - **`v3.2.5`**：**10 台裝置版兌換碼（`CN2M-` / `CN3M-` / `CNPRO-`）新增雲端裝置數累計與去重**：兌換時自動向雲端授權表單登記 Widevine 硬體指紋並嚴格限制最多 10 台不同裝置（同機重裝不重複計算；`CNFAM-`／`CNVIP` 系列維持不限裝置）。
 - **`v3.2.4`**：**Tab 3 陸版語音攔截新增「攔截後啟動目標 AI 選單」**：支援四種啟動模式切換——① **預設：Gemini 系統浮層視窗**；② **直接進入 Gemini Live（即時語音對話）**；③ **直接啟動客製化 AI 語音接收模式**（內建熱門 AI 清單含 ChatGPT 語音對話、Google Gemini 語音、Perplexity、Microsoft Copilot、Grok、豆包 Doubao、Claude、Kimi、DeepSeek，自動偵測本機安裝狀態）；④ **僅啟動目標 App**（可搜尋所有已安裝 App 含圖示選取）。
@@ -129,7 +130,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.6`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.7`)
+
+- **`v3.2.7`**: **Auto-Report All Redeemed Codes, Google Account & Device ID on App Update**: Automatically syncs every active redeemed code (`CN2M-`/`CN3M-`/`CNPRO-`/`CNFAM-`/`CNVIP*`/Gumroad), bound Google account, and Widevine hardware ID to the cloud sheet upon app update (`MY_PACKAGE_REPLACED`) or launch.
 
 - **`v3.2.6`**: **Auto-Sync Existing 10-Device Redemptions with Google Account**: Devices that already redeemed a 10-device code (`CN2M-` / `CN3M-` / `CNPRO-`) automatically sync their hardware ID and Google account email to the cloud license sheet on launch or when verifying via Google Account Restore.
 - **`v3.2.5`**: **Added Cloud Device Counting & Deduplication for 10-Device Redemption Codes (`CN2M-` / `CN3M-` / `CNPRO-`)**: Registers Widevine hardware IDs in the cloud license sheet (`usage / 10`) while keeping `CNFAM-` / `CNVIP` codes unlimited.
