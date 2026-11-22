@@ -57,7 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.7`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.8`）
+
+- **`v3.3.8`**：① **穿透式翻譯啟動首頁防護**：啟動時立即記錄原本所在 App 與是否已在首頁；若啟動後誤掉回桌面首頁，立即自動跳回原 App 頁面繼續翻譯（若啟動前原本就在首頁則維持首頁狀態）；② **左右滑動與觸控暫停／放手即譯**：新增全螢幕無干擾觸控監測與 `scrollX` 水平捲動偵測，觸控或滑動期間暫停翻譯，停止觸控後立即進入翻譯，支援上下與左右滑動換頁。
 
 - **`v3.3.7`**：① **防誤觸底部系統手勢回首頁**：`FastCircleHandoffOverlay` 與穿透式捲動翻譯控制條自動避開底部手勢導覽區並加上 `systemGestureExclusionRects` 防誤觸保護，避免在底部切換或操作時誤觸系統「回到首頁」；② **穿透式翻譯取消白框・改為沉浸式背景融合**：移除譯文框外圍邊框線條，並強化截圖週邊主色取樣與快取，讓譯文背景與原本畫面無縫融合、維持一致排版。
 
@@ -144,7 +146,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.7`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.8`)
+
+- **`v3.3.8`**: (1) **Startup Home-screen guard for Pass-Through Translate**: Captures the active app before launch and automatically returns to that app if a transient Home drop occurs right after startup (while staying on Home if launched from Home); (2) **Horizontal swipe & touch-pause / release-to-translate**: Added non-blocking screen touch detection and `scrollX` tracking so any vertical or horizontal swipe pauses active translation on touch and immediately translates once touch stops.
 
 - **`v3.3.7`**: (1) **Prevented accidental Home gesture triggers on bottom controls**: Added `systemGestureExclusionRects` and safe bottom gesture inset margins to both the Fast Circle handoff button and the Scroll Translate bottom bar; (2) **Immersive borderless translation overlay**: Removed the visible white box borders in `ScrollTranslateCanvasView` and improved surrounding dominant background sampling + color caching so translated text blends seamlessly into the original page.
 
