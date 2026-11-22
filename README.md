@@ -57,7 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.3`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.4`）
+
+- **`v3.4.4`**：**穿透式翻譯靜止 2.5 秒最終補驗＋休眠等待下次觸控滑動**：無觸控／滑動滿 `2.5 秒` 時自動再判斷翻譯最後一次，隨後進入靜默鎖定（不再受背景廣告或計時器干擾重翻），直到下次手指觸控或滑動再立即喚醒翻譯。
 
 - **`v3.4.3`**：**穿透式翻譯永不自行暫停（僅於手動關閉或鎖屏時停止）**：移除原本進入本體 App 或橫向／大螢幕重繪時自動切換回「待命」暫停的限制，並強化橫向旋轉後的自動重譯排程，確保無論在任何 App、直向或橫向大螢幕皆全程保持「啟動」持續翻譯，直到使用者手動點擊 `✕` 關閉。
 
@@ -156,7 +158,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.3`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.4`)
+
+- **`v3.4.4`**: **2.5-second idle final check & sleep until next touch/scroll**: After 2.5 seconds without touch or scrolling, Pass-Through Translate performs one final check/translation and then locks idle (ignoring background mutations) until the next user touch or scroll.
 
 - **`v3.4.3`**: **Never auto-pause Pass-Through Translate (stops only on explicit close or screen-off)**: Removed all automatic standby/pause triggers (including inside the host app and across orientation/foldable configuration changes), ensuring continuous active translation in both portrait and landscape until the user taps `✕`.
 
