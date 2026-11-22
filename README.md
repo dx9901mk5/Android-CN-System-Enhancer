@@ -57,7 +57,12 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.6`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.7`）
+
+- **`v3.4.7`**：**極速畫圈穿透式翻譯啟動鈕支援長壓微調拖動、跟隨 Google 畫圈介面 Bar 上下挪動、摺疊機內外螢幕各自記憶位置**：
+  - **長壓微調位置**：極速畫圈叫出穿透式翻譯圓形啟動鈕後，短按照常切入穿透式翻譯，**長按約 0.3 秒**（震動回饋＋橘框放大提示）即可自由拖動微調按鈕位置並記憶；
+  - **跟隨 Google 畫圈介面 Bar 上下挪動**：按鈕顯示期間即時偵測 Google 畫圈搜尋介面 Bar 的垂直高度變化（如圈選下方物件、展開翻譯列或上下拉動結果列），自動平滑同步上下移動維持相對對齊；
+  - **摺疊機內／外螢幕獨立記憶位置**：依據即時顯示器寬度自動區分摺疊機內螢幕（展開）與外螢幕（折疊）以及直／橫向，分別獨立保存並於切換螢幕時即時套用穿透式啟動鈕與穿透式翻譯控制條的位置設定。
 
 - **`v3.4.6`**：**設定備份支援直接選擇「本地」或「Google 雲端硬碟」指定路徑並自動記憶下次位置**：
   - 匯出備份視窗直接提供 **「本地備份」** 與 **「Google 雲端硬碟備份」**（皆附「變更路徑」按鈕，並保留雲端硬碟 App 分享備援）；
@@ -165,7 +170,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.6`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.7`)
+
+- **`v3.4.7`**: **Long-Press Draggable Fast-Circle Handoff Button, Google Circle Bar Vertical Tracking & Foldable Inner/Outer Position Memory**: Long-press (~0.3s) the circular Pass-Through Translate handoff button over Fast Circle to Search to drag and fine-tune its position; automatically glides vertically in lockstep when Google Circle to Search's interface bar moves up or down; remembers independent saved positions for foldable inner vs. outer screens (and portrait/landscape) for both the handoff button and Scroll Translate bar.
 
 - **`v3.4.6`**: **Direct Local / Google Drive Backup with Remembered Paths**: Export dialog now lets you pick **Local Backup** or **Google Drive Backup** directly with inline **Change Path** buttons. Local backup remembers a persisted folder (`ACTION_OPEN_DOCUMENT_TREE`) for instant 1-tap exports next time; Google Drive backup remembers the chosen Drive SAF location (`EXTRA_INITIAL_URI`) for subsequent exports & restores (with background stream writes and Drive App share fallback).
 
