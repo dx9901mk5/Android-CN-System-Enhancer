@@ -57,7 +57,12 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.5`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.6`）
+
+- **`v3.4.6`**：**設定備份支援直接選擇「本地」或「Google 雲端硬碟」指定路徑並自動記憶下次位置**：
+  - 匯出備份視窗直接提供 **「本地備份」** 與 **「Google 雲端硬碟備份」**（皆附「變更路徑」按鈕，並保留雲端硬碟 App 分享備援）；
+  - **本地備份**首次透過系統資料夾授權（`ACTION_OPEN_DOCUMENT_TREE`）指定並記憶資料夾後，下次點擊即可一鍵直接存入該資料夾；
+  - **Google 雲端硬碟備份**透過 SAF 指定雲端硬碟路徑並採背景串流寫入（防 0 位元組空檔），自動記住雲端硬碟位置供下次備份與還原直接開啟同一資料夾；設定對話框與還原選單亦會同步顯示已記憶路徑。
 
 - **`v3.4.5`**：**關螢幕時自動取消極速畫圈搜尋**：偵測到 `ACTION_SCREEN_OFF`（鎖屏／關閉螢幕）時立即移除右下角接手圓鈕，並自動關閉進行中的 Google 畫圈搜尋浮層（優先透過 `hideSessionFromSession(null)`／`hideCurrentSession()` 關閉語音互動工作階段，並具備無障礙返回／Shizuku 備援，且未開啟無障礙服務時亦能透過獨立廣播監聽觸發），避免重新解鎖後仍殘留畫圈搜尋畫面。
 
@@ -160,7 +165,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.5`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.6`)
+
+- **`v3.4.6`**: **Direct Local / Google Drive Backup with Remembered Paths**: Export dialog now lets you pick **Local Backup** or **Google Drive Backup** directly with inline **Change Path** buttons. Local backup remembers a persisted folder (`ACTION_OPEN_DOCUMENT_TREE`) for instant 1-tap exports next time; Google Drive backup remembers the chosen Drive SAF location (`EXTRA_INITIAL_URI`) for subsequent exports & restores (with background stream writes and Drive App share fallback).
 
 - **`v3.4.5`**: **Auto-cancel Fast Circle to Search on Screen Off**: Automatically dismisses both the bottom-right handoff button and any active Google Circle to Search overlay when the screen turns off (`ACTION_SCREEN_OFF`).
 
