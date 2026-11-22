@@ -57,7 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.4`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.5`）
+
+- **`v3.4.5`**：**關螢幕時自動取消極速畫圈搜尋**：偵測到 `ACTION_SCREEN_OFF`（鎖屏／關閉螢幕）時立即移除右下角接手圓鈕，並自動關閉進行中的 Google 畫圈搜尋浮層（優先透過 `hideSessionFromSession(null)`／`hideCurrentSession()` 關閉語音互動工作階段，並具備無障礙返回／Shizuku 備援，且未開啟無障礙服務時亦能透過獨立廣播監聽觸發），避免重新解鎖後仍殘留畫圈搜尋畫面。
 
 - **`v3.4.4`**：**穿透式翻譯靜止 2.5 秒最終補驗＋休眠等待下次觸控滑動**：無觸控／滑動滿 `2.5 秒` 時自動再判斷翻譯最後一次，隨後進入靜默鎖定（不再受背景廣告或計時器干擾重翻），直到下次手指觸控或滑動再立即喚醒翻譯。
 
@@ -158,7 +160,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.4`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.5`)
+
+- **`v3.4.5`**: **Auto-cancel Fast Circle to Search on Screen Off**: Automatically dismisses both the bottom-right handoff button and any active Google Circle to Search overlay when the screen turns off (`ACTION_SCREEN_OFF`).
 
 - **`v3.4.4`**: **2.5-second idle final check & sleep until next touch/scroll**: After 2.5 seconds without touch or scrolling, Pass-Through Translate performs one final check/translation and then locks idle (ignoring background mutations) until the next user touch or scroll.
 
