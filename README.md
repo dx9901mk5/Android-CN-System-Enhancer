@@ -57,8 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.1`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.3.2`）
 
+- **`v3.3.2`**：**極速畫圈啟動後新增「🌐 切換穿透式翻譯」浮動接手按鈕**（僅於本體 App 已開通穿透式翻譯付費權限時顯示）：點擊按鈕將自動關閉 Google 畫圈搜尋並立即由穿透式捲動翻譯接手現有畫面，無須回到桌面切換。
 - **`v3.3.1`**：① 移除 Tab 6「Google 畫圈搜尋 / MiCTS 防凍結加速」卡片；② 修正 Tab 6 方案 B「極速畫圈搜尋」改用 `VisTrigger.triggerCircleToSearch`（對齊 MiCTS 的 `omni.entry_point = 1`、`invocation_time_ms`、`micts_trigger` 參數），觸發後直接進入 Google 畫圈搜尋／翻譯介面而非一般語音助理浮層。
 - **`v3.3.0`**：**Tab 6「Shizuku 靜默安裝 APK」新增「宣告安裝來源為 Google Play 商店 (`-i com.android.vending`)」開關**：開啟後透過 Shizuku 靜默安裝 `.apk` 時將一併傳入 `-i com.android.vending`，讓系統與 Android Auto 判定為 Google Play 商店安裝來源（例如安裝 `AATube-Caster` 等車機相關 App）。
 - **`v3.2.9`**：① **Tab 6 新增方案 B「極速畫圈搜尋（預熱防延遲版）」捷徑／磁貼／獨立啟動器 App「極速畫圈」**：先於背景 90ms 預熱 `AssistantHandoffActivity` 再呼叫 `VisTrigger`，徹底繞過 Vivo OriginOS 3 秒冷交接卡頓；可一鍵產生獨立啟動器 App「極速畫圈」供各家手勢「指定應用程式啟動」選取，本體動態偵測安裝狀態且移除本體時一併自動移除（覆蓋更新不影響）；② **修復 GitHub API 403 限流導致 App 無法檢查更新**：新增 `github.com/.../releases/latest` 網頁跳轉直連備援；③ **APK 體積瘦身**：鎖定 `arm64-v8a` 大幅縮減下載時間。
@@ -134,8 +135,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.1`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.3.2`)
 
+- **`v3.3.2`**: **Added floating "🌐 Scroll Translate" handoff pill after Fast Circle launches** (shown only when Pass-Through Scroll Translate is unlocked via paid tier): tapping it automatically dismisses Circle to Search and hands the current screen directly over to Pass-Through Scroll Translate.
 - **`v3.3.1`**: (1) Removed the "Google Circle to Search / MiCTS Anti-Freeze Accelerator" card from Tab 6; (2) Fixed Option B "Fast Circle to Search" (`VisTrigger.triggerCircleToSearch`) to pass MiCTS-aligned bundle extras (`omni.entry_point = 1`, `invocation_time_ms`, `micts_trigger = true`) so it opens Circle to Search / Translate directly instead of the generic assistant sheet.
 - **`v3.3.0`**: **Added "Declare Installer as Google Play Store (`-i com.android.vending`)" toggle in Tab 6 Shizuku Silent APK Installer**: Allows installing APKs (such as Android Auto companion apps like `AATube-Caster`) via Shizuku while declaring `com.android.vending` as the installer package.
 - **`v3.2.9`**: (1) **Added Option B "Fast Circle to Search" Shortcut, Quick Tile & Standalone Launcher App (`Fast Circle` / `極速畫圈`) in Tab 6**: Pre-warms `AssistantHandoffActivity` (~90ms) before triggering `VisTrigger` to eliminate the ~3s Vivo OriginOS cold-handoff lag; supports generating a standalone launcher app for gesture apps ("Launch Application"), dynamically detected by the main app and auto-removed together upon uninstall (unaffected by updates); (2) **Fixed GitHub API 403 Rate-Limit Update Failures**: Added web-redirect fallback (`releases/latest`) in `UpdateChecker`; (3) **Slimmed APK ABI to `arm64-v8a`** for much faster in-app downloads.
