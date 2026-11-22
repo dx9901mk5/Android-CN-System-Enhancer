@@ -57,8 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.8`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.9`）
 
+- **`v3.2.9`**：① **Tab 6 新增方案 B「極速畫圈搜尋（預熱防延遲版）」捷徑／磁貼／獨立啟動器 App「極速畫圈」**：先於背景 90ms 預熱 `AssistantHandoffActivity` 再呼叫 `VisTrigger`，徹底繞過 Vivo OriginOS 3 秒冷交接卡頓；可一鍵產生獨立啟動器 App「極速畫圈」供各家手勢「指定應用程式啟動」選取，本體動態偵測安裝狀態且移除本體時一併自動移除（覆蓋更新不影響）；② **修復 GitHub API 403 限流導致 App 無法檢查更新**：新增 `github.com/.../releases/latest` 網頁跳轉直連備援；③ **APK 體積瘦身**：鎖定 `arm64-v8a` 大幅縮減下載時間。
 - **`v3.2.8`**：**Tab 5 新增「預載加速語言包」勾選下載與最新版本檢查**：可自由勾選預先下載常用語系（中、英、日、韓、泰、越、法、德、西、俄等 15 語）本機 ML Kit 神經翻譯包與 GMS 視覺 OCR 模組；已下載的語系組合於捲動翻譯時優先走本機 ~20ms 極速翻譯（免等網路延遲），並支援一鍵向 Google 檢查更新至最新版。
 - **`v3.2.7`**：**App 覆蓋更新與啟動時全量自動回傳試算表登記**：無論是 `CN2M-` / `CN3M-` / `CNPRO-` 或 `CNFAM-` / `CNVIP` 等所有已兌換序號，於 App 覆蓋更新（`MY_PACKAGE_REPLACED`）或啟動時皆自動將「兌換碼、已登記 Google 帳號與裝置硬體 ID」回傳至雲端試算表完成登記與累計。
 - **`v3.2.6`**：**補齊既有已兌換裝置自動結合 Google 帳號登記雲端**：針對先前已輸入過 10 台版兌換碼（`CN2M-` / `CN3M-` / `CNPRO-`）的裝置，啟動 App 或於「透過 Google 帳號還原授權」輸入 Email 時，自動將該裝置硬體指紋與 Google 帳號同步登記至雲端授權表單（納入 10 台裝置累計與去重）。
@@ -131,8 +132,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.8`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.9`)
 
+- **`v3.2.9`**: (1) **Added Option B "Fast Circle to Search" Shortcut, Quick Tile & Standalone Launcher App (`Fast Circle` / `極速畫圈`) in Tab 6**: Pre-warms `AssistantHandoffActivity` (~90ms) before triggering `VisTrigger` to eliminate the ~3s Vivo OriginOS cold-handoff lag; supports generating a standalone launcher app for gesture apps ("Launch Application"), dynamically detected by the main app and auto-removed together upon uninstall (unaffected by updates); (2) **Fixed GitHub API 403 Rate-Limit Update Failures**: Added web-redirect fallback (`releases/latest`) in `UpdateChecker`; (3) **Slimmed APK ABI to `arm64-v8a`** for much faster in-app downloads.
 - **`v3.2.8`**: **Added User-Selectable Preload Language Packs & Update Checker in Tab 5**: Users can select and pre-download on-device ML Kit translation packs (15 languages including ZH, EN, JA, KO, TH, VI, FR, DE, ES, RU, etc.) plus GMS OCR modules to accelerate Scroll Translate (~20ms on-device inference without network wait), and check/update all packs & OCR modules to the latest Google version.
 - **`v3.2.7`**: **Auto-Report All Redeemed Codes, Google Account & Device ID on App Update**: Automatically syncs every active redeemed code (`CN2M-`/`CN3M-`/`CNPRO-`/`CNFAM-`/`CNVIP*`/Gumroad), bound Google account, and Widevine hardware ID to the cloud sheet upon app update (`MY_PACKAGE_REPLACED`) or launch.
 
