@@ -57,8 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.5`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.2.6`）
 
+- **`v3.2.6`**：**補齊既有已兌換裝置自動結合 Google 帳號登記雲端**：針對先前已輸入過 10 台版兌換碼（`CN2M-` / `CN3M-` / `CNPRO-`）的裝置，啟動 App 或於「透過 Google 帳號還原授權」輸入 Email 時，自動將該裝置硬體指紋與 Google 帳號同步登記至雲端授權表單（納入 10 台裝置累計與去重）。
 - **`v3.2.5`**：**10 台裝置版兌換碼（`CN2M-` / `CN3M-` / `CNPRO-`）新增雲端裝置數累計與去重**：兌換時自動向雲端授權表單登記 Widevine 硬體指紋並嚴格限制最多 10 台不同裝置（同機重裝不重複計算；`CNFAM-`／`CNVIP` 系列維持不限裝置）。
 - **`v3.2.4`**：**Tab 3 陸版語音攔截新增「攔截後啟動目標 AI 選單」**：支援四種啟動模式切換——① **預設：Gemini 系統浮層視窗**；② **直接進入 Gemini Live（即時語音對話）**；③ **直接啟動客製化 AI 語音接收模式**（內建熱門 AI 清單含 ChatGPT 語音對話、Google Gemini 語音、Perplexity、Microsoft Copilot、Grok、豆包 Doubao、Claude、Kimi、DeepSeek，自動偵測本機安裝狀態）；④ **僅啟動目標 App**（可搜尋所有已安裝 App 含圖示選取）。
 - **`v3.2.3`**：① **Tab 5 懸浮工作列全面重設計**：左側精簡為「待命／啟動」兩段明確狀態提示；右側改為「`來源語系` ⇄ `目標語言`」雙向獨立選單與一鍵左右互換按鈕（移除 App 內多餘的來源語系對話框選項）；② **Tab 6 新增「Google 畫圈搜尋 / MiCTS 防凍結加速」（預設開啟）**：透過 Shizuku 自動將 Google App 加入 Doze 省電與背景執行白名單，改善 OriginOS／陸版系統凍結導致的 3 秒延遲；③ **設定備份匯出支援自訂本機裝置名稱前綴**：於匯出設定上方可直接輸入裝置名稱並自動冠於 `.json` 備份檔名前方。
@@ -128,8 +129,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.5`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.2.6`)
 
+- **`v3.2.6`**: **Auto-Sync Existing 10-Device Redemptions with Google Account**: Devices that already redeemed a 10-device code (`CN2M-` / `CN3M-` / `CNPRO-`) automatically sync their hardware ID and Google account email to the cloud license sheet on launch or when verifying via Google Account Restore.
 - **`v3.2.5`**: **Added Cloud Device Counting & Deduplication for 10-Device Redemption Codes (`CN2M-` / `CN3M-` / `CNPRO-`)**: Registers Widevine hardware IDs in the cloud license sheet (`usage / 10`) while keeping `CNFAM-` / `CNVIP` codes unlimited.
 - **`v3.2.4`**: **Added Target AI Selector to Tab 3 (Voice Intercept)**: Choose between 4 launch modes after intercepting CN voice assistants — (1) **Default: Gemini System Overlay**; (2) **Direct Launch: Gemini Live**; (3) **Custom AI Voice Mode** (curated popular AI list with auto-detected install status: ChatGPT Voice, Google Gemini Voice, Perplexity, Microsoft Copilot, Grok, Doubao, Claude, Kimi, DeepSeek); (4) **Launch Target App Only** (searchable picker with app icons).
 - **`v3.2.3`**: (1) **Redesigned Tab 5 Floating Capsule**: Simplified the left badge to clean `Standby` / `Active` (`待命` / `啟動`) states, and replaced the right controls with symmetric **`Source` ⇄ `Target Lang` (`來源語系` ⇄ `目標語言`)** pickers and one-tap language swapping (removed the redundant in-app source language button); (2) **Added "Google Circle to Search / MiCTS Anti-Freeze Accelerator" in Tab 6 (ON by default)**: Uses Shizuku to keep `com.google.android.googlequicksearchbox` in Doze & AppOps background whitelists; (3) **Added Custom Device Name Prefix to Settings Backup**: Export dialog now includes an optional device name field prepended to exported `.json` filenames.
