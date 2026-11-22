@@ -57,7 +57,9 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.0`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.1`）
+
+- **`v3.4.1`**：① **關閉螢幕自動關閉穿透式翻譯**：鎖屏／關閉螢幕時自動停止穿透式捲動翻譯並移除浮動視窗，省電且避免解鎖誤觸；② **極速畫圈觸發瞬間鎖定原 App／啟動器狀態並交接給穿透式翻譯**：於極速畫圈啟動當下立即快照記錄原所在 App 或啟動器，切換穿透式翻譯時精準依該狀態決定進多工切回原 App 或維持首頁。
 
 - **`v3.4.0`**：**強化穿透式翻譯「進多工選最近 App」返回機制**：若非於啟動器首頁觸發且啟動後掉回桌面，自動喚起系統多工畫面並點擊最近使用的 App 卡片回到原頁面；若啟動時原本就在啟動器首頁，則維持於首頁不進入多工程序。
 
@@ -150,7 +152,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.0`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.1`)
+
+- **`v3.4.1`**: (1) **Auto-stop Pass-Through Translate on Screen Off**: Automatically stops Scroll Translate and clears overlays when the screen turns off; (2) **Pre-Circle App/Launcher State Handoff**: Captures the active App or Launcher package at the exact moment Fast Circle launches and passes it into Scroll Translate so Recents restoration reliably returns to the original App (or stays on Home if started from Home).
 
 - **`v3.4.0`**: **Improved Recents card tap restoration for Pass-Through Translate**: Automatically opens system Recents and taps the most recently used app card if a transient Home drop occurs after launch (while skipping Recents completely when started directly on the Launcher/Home screen).
 
