@@ -57,7 +57,10 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.3`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.4`）
+
+- **`v3.5.4`**：**穿透式翻譯懸浮控制條新增 `1x`／`1.5x`／`2x`／`2.5x` 放大縮放選項**：
+  - 於 Tab 5 穿透式捲動翻譯底部懸浮條新增倍率切換鈕（`1x` → `1.5x` → `2x` → `2.5x` 循環記憶），放大時維持高解析向量排版並於窄螢幕自動雙排折行避免裁切。
 
 - **`v3.5.3`**：**支援 Google Play 獨立版跨 App 連動認證（ClearScroll 穿透譯／CallMusicGuard 來電音樂）**：
   - **跨 App 自動認證**：若手機已安裝並購買 Google Play 版《ClearScroll 穿透譯》（`com.clearscroll.translate`）或《CallMusicGuard 來電暫停音樂》（`com.dx9901mk5.callmusicguard`），且購買時間超過 **12 小時（防退款保護＋可信 UTC 網路校時＋簽章驗證）**，CN 本體將分別自動授予 **Tab 5 穿透式捲動翻譯（含極速畫圈連動）** 或 **進階 Plus（2 模組＋來電音樂無上限）** 資格。
