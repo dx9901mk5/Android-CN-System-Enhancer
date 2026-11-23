@@ -39,11 +39,11 @@
    - **反偵測 ADB 與無障礙隱藏**：進入一般 App 時自動隱藏 `adb_enabled`、`adb_wifi_enabled` 與 `development_settings_enabled`（預設自動排除本身需使用 Shizuku 的 App）；亦可自訂勾選需同時隱藏「開發者模式與無障礙」的目標 App（如行動支付／銀行／會員 App），離開 App 或關閉螢幕時自動還原。
    - **自動消除 vivo 開發模式通知**：自動清除系統因切換開發者模式所彈出的風險提醒通知。
 
-5. **Tab 5 — 穿透式捲動翻譯（仿 Google 捲動翻譯）〔Pro / Premium 專屬〕**
+5. **Tab 5 — 穿透式捲動翻譯（仿 Google 捲動翻譯）〔7 天試用全開／Tab 5 單獨購買／頂級 Premium〕**
    - 🎬 **實機操作示範影片**：https://youtube.com/shorts/1QtWvg_pKqc
    - **免 Root・Google 翻譯全球百餘語系自動偵測＋ML Kit 視覺雙引擎驅動（翻譯速度與台版原生 Google 捲動翻譯相等）**：不僅適用於陸版 CN ROM 手機，**亦支援「國際版／台版但系統無內建捲動翻譯功能」的所有 Android 手機使用**！可像 Google 翻譯一樣自動判斷全球所有可用語言（英、日、韓、歐語、泰、越、俄、阿、印、簡繁等），將譯文直接原位覆蓋於原文座標正上方，手指可直接觸控穿透上下滑動並於停頓後自動即時重翻；開啟後持續鎖定翻譯、點擊螢幕絕不取消，僅透過懸浮膠囊右側 `✕` 按鈕或 App 本體開關關閉。
    - **獨立啟動器捷徑 App「仿G 捲動」**：提供一鍵產生名為 **「仿G 捲動」**（簡中：`仿G 滚动` / 英文：`G-Scroll`）的極小獨立啟動器 App，方便各家邊緣手勢 App、系統智慧側邊欄、自訂桌面啟動器於「啟動應用程式」清單中直接選取綁定；使用者可隨時單獨移除「仿G 捲動」（本體 App 自動偵測存在狀態），且移除本體 App 時亦會自動一併移除。
-   - **方案與既有購買者權益**：開放 **專業 Pro（NT\$260）** 與 **頂級 Premium（NT\$380）** 用戶開通（進階 Plus 維持 NT\$120，加購升級擴充為 NT\$150）；**既有已購買 Pro 與 Premium 的用戶直接享有開通資格，不受價格調整影響**。
+   - **方案與既有購買者權益**：首次安裝享 **7 天全功能試用（Tab 1–6 全開）**；正式方案提供 **進階 Plus（NT\$120，2 模組）**、**專業 Pro（NT\$260，3 模組）**、**專業進階 Pro Plus（NT\$380，4 模組）**、**Tab 5 單獨購買（NT\$400）**、**頂級 Premium（NT\$760，Tab 1–5 全開）** 及 **加購 +1 分頁（NT\$150）**；**既有已購買原 Pro／頂級 Premium 的用戶透過平滑遷移自動保留完整功能，不受方案調整影響**。
 
 6. **Tab 6 — 免費工具箱（永久免費・專為 Vivo / iQOO 陸版 ROM 設計）＋ 推薦友情連結**
    - **雙擊電源鍵啟動相機（Vivo 陸版修復）**：透過 Shizuku 監聽電源鍵雙擊，支援任何時候／僅鎖屏息屏／僅解鎖後觸發，提供息屏雙擊音量下鍵與直呼安全相機雙模式。
@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.1`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.2`）
+
+- **`v3.5.2`**：**修正陸版語音攔截 Gemini 誤出穿透式翻譯圓鈕 ＋ 7 天全功能試用與新版 6 方案對齊**：
+  - **嚴格區隔「極速畫圈」與「Tab 3 陸版語音攔截 Gemini」**：`FastCircleHandoffOverlay.onAssistOverlayWindowShown()` 改為嚴格要求由極速畫圈主動發起的工作階段（`circleSessionActive == true`）才進行置頂與補觸發，並於 `TriggerActivity`／`InterceptCoordinator` 喚起 Gemini／AI 前主動清除殘留工作階段，徹底解決陸版語音攔截喚起 Gemini 介面時誤彈出穿透式翻譯圓鈕的問題（同步更新四語系操作說明）。
+  - **7 天全功能試用（Tab 1–6 全開）與新版 6 方案定價（與 Gumroad 同步）**：正式分級為 Plus（NT\$120，2 模組）／Pro（NT\$260，3 模組）／Pro Plus（NT\$380，4 模組）／Tab 5 單獨購買（NT\$400）／頂級 Premium（NT\$760，Tab 1–5 全開）／加購 +1 分頁（NT\$150），既有 Pro／頂級 Premium 用戶平滑遷移保留完整功能。
 
 - **`v3.5.1`**：**對比 Google 原廠捲動翻譯全面修復穿透式翻譯閃爍、板位字級排版、圖片文字翻譯，並新增極速畫圈連動開關**：
   - **零閃爍視窗直截與輪播廣告過濾**：Android 14+ 改採 `takeScreenshotOfWindow` 僅擷取底層 App 視窗（無須隱藏譯文畫布與底部控制條，實現 `0ms` 零閃爍並根除半中半英殘影）；同時攔截非觸控期間的背景橫幅廣告自動輪播事件，靜止閱讀不再跳掉重刷。
@@ -176,11 +180,11 @@
    - **Anti-ADB & Accessibility Hiding**: Hides `adb_enabled`, `adb_wifi_enabled`, and `development_settings_enabled` for regular apps while excluding Shizuku-dependent apps by default. Supports a custom app list to hide both Developer Options/ADB and Accessibility Services, restoring them automatically on exit or screen off.
    - **Auto-Dismiss System Dev Warnings**: Automatically clears repetitive vivo/system "Developer Mode active" warning notifications.
 
-5. **Tab 5 — Pass-Through Scroll Translate (`Google-Style Live Translate`・Pro / Premium Exclusive)**
+5. **Tab 5 — Pass-Through Scroll Translate (`Google-Style Live Translate`・7-Day Trial / Tab 5 Standalone / Premium)**
    - 🎬 **Live Demo Video**: https://youtube.com/shorts/1QtWvg_pKqc
    - **Root-Free・Global 130+ Language Auto-Detect + ML Kit Vision OCR Dual Engine (Matching Native Google Scroll Translate Speed)**: Works on **both CN ROM phones AND Global/International Android phones that lack built-in Scroll Translate**! Automatically detects all 130+ languages supported by Google Translate and overlays translated text directly over original screen coordinates with full touch pass-through. Stays continuously active without ever cancelling on screen taps—only the capsule's `✕` button or the App's Tab 5 switch turns it off.
    - **Standalone Launcher Shortcut App (`G-Scroll` / `仿G 捲動`)**: Generates a tiny standalone launcher app so any edge-gesture app, system smart sidebar, or custom launcher can bind it under "Launch Application". Users can uninstall it individually anytime (detected dynamically by the main app), and uninstalling the main app automatically removes it together.
-   - **Licensing & Existing Buyers**: Unlocked for **Pro (NT\$260)** and **Premium (NT\$380)** users (Plus remains NT\$120; +1 Tier Upgrade Add-on is NT\$150). **Existing Pro and Premium buyers retain full entitlement automatically without price re-evaluation.**
+   - **Licensing & Existing Buyers**: First install includes a **7-day full trial (Tabs 1–6 unlocked)**; plans include **Plus (NT\$120, 2 modules)**, **Pro (NT\$260, 3 modules)**, **Pro Plus (NT\$380, 4 modules)**, **Tab 5 Standalone (NT\$400)**, **Premium (NT\$760, Tabs 1–5 all unlocked)**, and **+1 Tab Add-on (NT\$150)**. **Existing legacy Pro and Premium buyers automatically retain full entitlement via seamless migration.**
 
 6. **Tab 6 — Free Tools (`Permanently Free・Tailored for Vivo / iQOO CN ROM`) & Recommended Links**
    - **Double-Tap Power Key Camera (Vivo CN ROM Fix)**, **Vivo / iQOO CN Navigation Voice Fix (Google TTS)**, **Shizuku Silent APK Installer**, **Developer / USB Notification Diagnostics & Gmail Export**, **CN ROM Google Maps Timeline Unlock (640 dp Workaround)**, **Vivo Mini-Screen Mode Accessibility Guard**, and **Auto-Dismiss Android System Warning Notifications**.
@@ -189,7 +193,11 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.1`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.2`)
+
+- **`v3.5.2`**: **Fixed Tab 3 Voice Intercept Gemini falsely showing the Pass-Through Translate handoff button + 7-day Full Trial & 6-Tier Pricing Alignment**:
+  - **Strictly Scoped Handoff Button**: `FastCircleHandoffOverlay.onAssistOverlayWindowShown()` now requires an active Fast Circle session (`circleSessionActive == true`), and Tab 3 `TriggerActivity` / `InterceptCoordinator` explicitly clears any residual Fast Circle session before launching Gemini/AI — ensuring the round Pass-Through Translate button appears only for Fast Circle to Search (4-language User Guide updated).
+  - **7-Day Full Trial (Tabs 1–6) & New 6-Tier Licensing (Synced with Gumroad)**: Plus (NT\$120) / Pro (NT\$260) / Pro Plus (NT\$380) / Tab 5 Standalone (NT\$400) / Premium (NT\$760) / +1 Tab Add-on (NT\$150), with seamless migration preserving full benefits for legacy Pro & Premium buyers.
 
 - **`v3.5.1`**: **Zero-Flicker Window Capture, Matched Typography/Layout, Embedded Image OCR & Fast Circle Handoff Toggle**:
   - **Zero-Flicker & Ad-Carousel Immunity**: Uses `takeScreenshotOfWindow` on Android 14+ so overlays and the control bar never blink or capture ghost text, and ignores background auto-scrolling ad carousels while reading.
