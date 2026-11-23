@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.2`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.3`）
+
+- **`v3.5.3`**：**支援 Google Play 獨立版跨 App 連動認證（ClearScroll 穿透譯／CallMusicGuard 來電音樂）**：
+  - **跨 App 自動認證**：若手機已安裝並購買 Google Play 版《ClearScroll 穿透譯》（`com.clearscroll.translate`）或《CallMusicGuard 來電暫停音樂》（`com.dx9901mk5.callmusicguard`），且購買時間超過 **12 小時（防退款保護＋可信 UTC 網路校時＋簽章驗證）**，CN 本體將分別自動授予 **Tab 5 穿透式捲動翻譯（含極速畫圈連動）** 或 **進階 Plus（2 模組＋來電音樂無上限）** 資格。
+  - **防衝突提示**：偵測 Play 版功能仍在啟用時，彈窗建議**停用 Play 版功能／捷徑（保留 App 安裝勿移除）**，改以 CN 本體的極速畫圈連動與 Tab 1 來電音樂統一接手（同步更新四語系操作說明）。
 
 - **`v3.5.2`**：**修正陸版語音攔截 Gemini 誤出穿透式翻譯圓鈕 ＋ 7 天全功能試用與新版 6 方案對齊**：
   - **嚴格區隔「極速畫圈」與「Tab 3 陸版語音攔截 Gemini」**：`FastCircleHandoffOverlay.onAssistOverlayWindowShown()` 改為嚴格要求由極速畫圈主動發起的工作階段（`circleSessionActive == true`）才進行置頂與補觸發，並於 `TriggerActivity`／`InterceptCoordinator` 喚起 Gemini／AI 前主動清除殘留工作階段，徹底解決陸版語音攔截喚起 Gemini 介面時誤彈出穿透式翻譯圓鈕的問題（同步更新四語系操作說明）。
