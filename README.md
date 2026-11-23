@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.7`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.8`）
+
+- **`v3.4.8`**：**徹底修復極速畫圈截圖後強制回到首頁的問題**：
+  - 根因修復：移除 `FastCircleSearchActivity` 與獨立捷徑 `circlestub` 的 `launchMode="singleInstance"`、`taskAffinity=""` 以及截圖後 220ms 才 `finish()` 的延遲（該延遲會導致任務在截圖完成瞬間銷毀並把系統切回桌面首頁）；全面對齊 MiCTS 生命週期於 `onCreate()` 同步即時結束。
+  - 消除雙重 Activity 跳轉：新增無頭 `FastCircleTriggerProvider`，獨立捷徑「極速畫圈」（升級至 `v1.1.0`）改以同步呼叫主程式直接喚起畫圈搜尋、完全不建立第二個透明視窗與任務，並支援於開啟主程式／更新後透過 Shizuku 自動靜默升級舊版「極速畫圈」捷徑。
 
 - **`v3.4.7`**：**極速畫圈穿透式翻譯啟動鈕支援長壓微調拖動、跟隨 Google 畫圈介面 Bar 上下挪動、摺疊機內外螢幕各自記憶位置**：
   - **長壓微調位置**：極速畫圈叫出穿透式翻譯圓形啟動鈕後，短按照常切入穿透式翻譯，**長按約 0.3 秒**（震動回饋＋橘框放大提示）即可自由拖動微調按鈕位置並記憶；
@@ -170,7 +174,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.7`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.8`)
+
+- **`v3.4.8`**: **Fixed Fast Circle to Search forcing a drop back to the Home screen right after taking the screenshot**: Removed `singleInstance`, empty `taskAffinity`, and the 220ms post-trigger `finish()` delay in `FastCircleSearchActivity` & `circlestub` (aligning with MiCTS's immediate `finish()` in `onCreate()`), introduced headless `FastCircleTriggerProvider` so the standalone "Fast Circle" stub triggers Circle to Search with zero second-Activity/Task hop, and added automatic Shizuku upgrade for existing `circlestub` v1 installs.
 
 - **`v3.4.7`**: **Long-Press Draggable Fast-Circle Handoff Button, Google Circle Bar Vertical Tracking & Foldable Inner/Outer Position Memory**: Long-press (~0.3s) the circular Pass-Through Translate handoff button over Fast Circle to Search to drag and fine-tune its position; automatically glides vertically in lockstep when Google Circle to Search's interface bar moves up or down; remembers independent saved positions for foldable inner vs. outer screens (and portrait/landscape) for both the handoff button and Scroll Translate bar.
 
