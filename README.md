@@ -57,7 +57,12 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.8`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.9`）
+
+- **`v3.4.9`**：**修復極速畫圈啟動變慢、穿透式小按鈕無法正常點擊／跳出太慢，以及退出畫圈後按鈕殘留問題**：
+  - **恢復極速秒開且不回首頁**：保留無頭 `FastCircleTriggerProvider`（零雙跳、無 `singleInstance` 與空 `taskAffinity`），同時讓單一透明視窗維持短暫存活（`260ms` 或偵測畫圈取得焦點後 `45ms` 即收尾，`circlestub` 升級 `v1.2.0`），徹底消除 `AssistStructure` 3 秒逾時卡頓。
+  - **徹底解除主執行緒阻塞與修復按鈕點按**：將 Google 畫圈視窗與介面 Bar 偵測全部移至背景執行緒（`a11yInspectExecutor`），並將長壓拖曳門檻調至 `420ms`、放寬短按點擊容許範圍且偵測畫圈視窗一就緒即於最上層彈出，恢復秒跳出與高靈敏單點。
+  - **退出極速畫圈按鈕自動立即消失**：背景監控同步偵測 Google 畫圈視窗／焦點是否存在，一旦使用者未點擊按鈕而退出畫圈搜尋，於 ~`0.25 秒` 內自動清除按鈕不再殘留於畫面。
 
 - **`v3.4.8`**：**徹底修復極速畫圈截圖後強制回到首頁的問題**：
   - 根因修復：移除 `FastCircleSearchActivity` 與獨立捷徑 `circlestub` 的 `launchMode="singleInstance"`、`taskAffinity=""` 以及截圖後 220ms 才 `finish()` 的延遲（該延遲會導致任務在截圖完成瞬間銷毀並把系統切回桌面首頁）；全面對齊 MiCTS 生命週期於 `onCreate()` 同步即時結束。
@@ -174,7 +179,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.8`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.9`)
+
+- **`v3.4.9`**: **Fixed Fast Circle slow trigger, sluggish/unclickable handoff button, and lingering button after closing Circle to Search**: Kept the zero-hop no-`singleInstance` architecture while keeping the translucent trigger alive briefly (~260ms / until focus loss, `circlestub` `v1.2.0`) to eliminate the 3-second `AssistStructure` timeout; moved all Google Circle window/bar inspection off the main thread (`a11yInspectExecutor`) so the button appears fast and taps reliably (`420ms` long-press threshold, generous tap slop); added active Google overlay presence monitoring so the button auto-dismisses within ~0.25s whenever you exit Circle to Search without tapping it.
 
 - **`v3.4.8`**: **Fixed Fast Circle to Search forcing a drop back to the Home screen right after taking the screenshot**: Removed `singleInstance`, empty `taskAffinity`, and the 220ms post-trigger `finish()` delay in `FastCircleSearchActivity` & `circlestub` (aligning with MiCTS's immediate `finish()` in `onCreate()`), introduced headless `FastCircleTriggerProvider` so the standalone "Fast Circle" stub triggers Circle to Search with zero second-Activity/Task hop, and added automatic Shizuku upgrade for existing `circlestub` v1 installs.
 
