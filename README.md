@@ -57,7 +57,13 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.0`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.1`）
+
+- **`v3.5.1`**：**對比 Google 原廠捲動翻譯全面修復穿透式翻譯閃爍、板位字級排版、圖片文字翻譯，並新增極速畫圈連動開關**：
+  - **零閃爍視窗直截與輪播廣告過濾**：Android 14+ 改採 `takeScreenshotOfWindow` 僅擷取底層 App 視窗（無須隱藏譯文畫布與底部控制條，實現 `0ms` 零閃爍並根除半中半英殘影）；同時攔截非觸控期間的背景橫幅廣告自動輪播事件，靜止閱讀不再跳掉重刷。
+  - **對應頁面板位字級與段落排版**：依原文「單行像素字高」1:1 對應字級（支援 `6.5sp` 圖片微縮字至 `34sp` 粗體大標題，解決內文過大、標題過小及標副標誤黏問題），多行段落貼齊原文左上邊界。
+  - **強化圖片與內嵌螢幕截圖翻譯**：提升 OCR 原生解析度至 `2460px`、調優微小文字門檻並加入 ML Kit Latin 雙引擎補盲，單頁上限提升至 `90` 筆，完整翻譯縮圖與內嵌手機截圖小字。
+  - **新增極速畫圈「連動捲動翻譯」開關與穩定度修復**：於 Tab 6 極速畫圈卡片底部新增連動開關，並加入 Google 畫圈掛載自動置頂 Z-order 與雙保險偵測，解決冷啟動時圓鈕偶發未跳出的問題（同步更新四語系操作說明）。
 
 - **`v3.5.0`**：**⚙ 設定頁新增「功能與操作說明」按鈕與四語系內建說明**：
   - 於右上角 **⚙ 設定** 視窗新增「功能與操作說明」按鈕（點擊後才展開完整可捲動視窗），涵蓋 Tab 1–6 各分頁操作重點、Tab 5 穿透式捲動翻譯用法，以及 Tab 5 × Tab 6 極速畫圈搜尋連動與長壓拖動／跟隨 Google Bar／摺疊機雙螢幕記憶說明。
@@ -183,7 +189,13 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.0`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.1`)
+
+- **`v3.5.1`**: **Zero-Flicker Window Capture, Matched Typography/Layout, Embedded Image OCR & Fast Circle Handoff Toggle**:
+  - **Zero-Flicker & Ad-Carousel Immunity**: Uses `takeScreenshotOfWindow` on Android 14+ so overlays and the control bar never blink or capture ghost text, and ignores background auto-scrolling ad carousels while reading.
+  - **Matched Font Scale & Layout**: Scales translated text to the original single-line height (`6.5sp` micro-labels up to `34sp` bold headings), left/top-aligns paragraphs, and prevents headings from merging into subtitles.
+  - **Image & UI Screenshot Translation**: Boosted native OCR resolution (`2460px`), added dual Chinese+Latin OCR supplement in Auto mode, and raised per-screen capacity to `90` blocks.
+  - **Fast Circle Handoff Toggle & Z-Order Fix**: Added a "Link Pass-Through Scroll Translate" switch on Tab 6, auto-raises Z-order above Google Circle to Search on cold starts, and updated the 4-language User Guide.
 
 - **`v3.5.0`**: **Added "User Guide & Feature Overview" button in Settings (4 languages)**: Added a dedicated button inside the top-right **⚙ Settings** dialog that opens a scrollable, selectable guide covering all 6 tabs, Tab 5 Pass-Through Scroll Translate usage, and Tab 5 × Tab 6 Fast Circle handoff / long-press drag / bar tracking / foldable dual-screen position memory, fully localized in English, Traditional Chinese, Simplified Chinese, and Japanese.
 
