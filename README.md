@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.4.9`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.0`）
+
+- **`v3.5.0`**：**⚙ 設定頁新增「功能與操作說明」按鈕與四語系內建說明**：
+  - 於右上角 **⚙ 設定** 視窗新增「功能與操作說明」按鈕（點擊後才展開完整可捲動視窗），涵蓋 Tab 1–6 各分頁操作重點、Tab 5 穿透式捲動翻譯用法，以及 Tab 5 × Tab 6 極速畫圈搜尋連動與長壓拖動／跟隨 Google Bar／摺疊機雙螢幕記憶說明。
+  - 完整支援繁體中文、簡體中文、英文、日文四語系即時切換顯示。
 
 - **`v3.4.9`**：**修復極速畫圈啟動變慢、穿透式小按鈕無法正常點擊／跳出太慢，以及退出畫圈後按鈕殘留問題**：
   - **恢復極速秒開且不回首頁**：保留無頭 `FastCircleTriggerProvider`（零雙跳、無 `singleInstance` 與空 `taskAffinity`），同時讓單一透明視窗維持短暫存活（`260ms` 或偵測畫圈取得焦點後 `45ms` 即收尾，`circlestub` 升級 `v1.2.0`），徹底消除 `AssistStructure` 3 秒逾時卡頓。
@@ -179,7 +183,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.4.9`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.0`)
+
+- **`v3.5.0`**: **Added "User Guide & Feature Overview" button in Settings (4 languages)**: Added a dedicated button inside the top-right **⚙ Settings** dialog that opens a scrollable, selectable guide covering all 6 tabs, Tab 5 Pass-Through Scroll Translate usage, and Tab 5 × Tab 6 Fast Circle handoff / long-press drag / bar tracking / foldable dual-screen position memory, fully localized in English, Traditional Chinese, Simplified Chinese, and Japanese.
 
 - **`v3.4.9`**: **Fixed Fast Circle slow trigger, sluggish/unclickable handoff button, and lingering button after closing Circle to Search**: Kept the zero-hop no-`singleInstance` architecture while keeping the translucent trigger alive briefly (~260ms / until focus loss, `circlestub` `v1.2.0`) to eliminate the 3-second `AssistStructure` timeout; moved all Google Circle window/bar inspection off the main thread (`a11yInspectExecutor`) so the button appears fast and taps reliably (`420ms` long-press threshold, generous tap slop); added active Google overlay presence monitoring so the button auto-dismisses within ~0.25s whenever you exit Circle to Search without tapping it.
 
