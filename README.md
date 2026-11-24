@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.5`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.6`）
+
+- **`v3.5.6`**：**Tab 6 整合 Vivo 小螢幕「本頁不支持」一鍵修復與長截圖旗標自動守護**：
+  - 依 `vivo X Fold6` 與 `MinScreen.apk` 反組譯實測結論，於 Tab 6 小螢幕卡片新增即時診斷（顯示 `scroll_shot_running_state` 與 `ScrollshotAccessibilityService` 全域批註衝突狀態）與「一鍵修復小螢幕」按鈕，透過 Shizuku 自動自我授權 `WRITE_SECURE_SETTINGS` 並將卡死的長截圖旗標歸零、停用衝突的全域批註無障礙服務（保留其餘全部無障礙服務）。
+  - 新增「自動守護長截圖旗標」開關，透過前景服務 `ContentObserver` 監聽 `scroll_shot_running_state`，若卡在 `1` 超過 5 秒且未在進行長截圖即自動歸零，徹底解決單手模式跳「本頁不支持」問題（同步更新四語系操作說明）。
 
 - **`v3.5.5`**：**穿透式翻譯懸浮條維持 1X 緊湊外觀、取消膠囊縮放鈕，改於 ⚙ 設定內調整懸浮條字體大小**：
   - 取消底部懸浮條上的 `1x` 縮放切換按鈕與整條等比膨脹，膠囊容器永遠維持輕巧 1X 尺寸。
@@ -204,7 +208,9 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.5`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.6`)
+
+- **`v3.5.6`**: **Integrated Vivo Mini-Screen "Not Supported" One-Tap Fix & Auto-Reset Guard in Tab 6**: Added real-time diagnostics (`scroll_shot_running_state` and `ScrollshotAccessibilityService` Global Annotate conflict detection), a one-tap fix button (auto-grants `WRITE_SECURE_SETTINGS` via Shizuku, resets the stuck scroll-shot flag to `0`, and disables only the conflicting Global Annotate service), plus a `ContentObserver` auto-guard switch that resets `scroll_shot_running_state` if stuck at `1` for >5 seconds (4-language User Guide updated).
 
 - **`v3.5.5`**: **Kept Scroll Translate Capsule at 1x, Removed Capsule Scale Button, Enlarged Bar Font & Added Settings Font Size Picker**: Removed the inline scale toggle button and oversized container scaling so the floating control bar stays compact at 1x, enlarged bar label typography by default (`1.2x`), and added a "Scroll Translate Bar Font Size" option (`1.0x` / `1.2x` / `1.35x` / `1.5x`) inside **⚙ Settings** with instant live apply (4-language User Guide updated).
 
