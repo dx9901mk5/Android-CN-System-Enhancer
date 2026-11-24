@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.4`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.5`）
+
+- **`v3.5.5`**：**穿透式翻譯懸浮條維持 1X 緊湊外觀、取消膠囊縮放鈕，改於 ⚙ 設定內調整懸浮條字體大小**：
+  - 取消底部懸浮條上的 `1x` 縮放切換按鈕與整條等比膨脹，膠囊容器永遠維持輕巧 1X 尺寸。
+  - 預設將懸浮條內文字體放大為 **`1.2x`** 提升易讀性，並於 **⚙ 設定 → 外觀與語言** 新增「捲動翻譯懸浮條字體大小」選項（`1.0x`／`1.2x`／`1.35x`／`1.5x`），調整後即時生效（同步更新四語系操作說明）。
 
 - **`v3.5.4`**：**穿透式翻譯懸浮控制條新增 `1x`／`1.5x`／`2x`／`2.5x` 放大縮放選項**：
   - 於 Tab 5 穿透式捲動翻譯底部懸浮條新增倍率切換鈕（`1x` → `1.5x` → `2x` → `2.5x` 循環記憶），放大時維持高解析向量排版並於窄螢幕自動雙排折行避免裁切。
@@ -200,7 +204,13 @@
      2. **MiCTS (Trigger Circle to Search / Translate)**: https://github.com/parallelcc/MiCTS — Recommended APKs: `MiCTS.apk` (triggers Circle to Search translation) & `VISTrigger.apk` (manually triggers the Gemini voice/circle overlay)
      3. **Bada (Global Quick Share Channel for CN ROMs)**: https://github.com/kyujin-cho/Bada — Connects CN ROM Android phones to global Android Nearby Share / Quick Share channels (does not connect to AirDrop yet, but enables mutual discovery and file transfer between Global and CN Android phones).
 
-### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.2`)
+### 🔄 Recent Changelog Summary (`v0.1.0` → `v3.5.5`)
+
+- **`v3.5.5`**: **Kept Scroll Translate Capsule at 1x, Removed Capsule Scale Button, Enlarged Bar Font & Added Settings Font Size Picker**: Removed the inline scale toggle button and oversized container scaling so the floating control bar stays compact at 1x, enlarged bar label typography by default (`1.2x`), and added a "Scroll Translate Bar Font Size" option (`1.0x` / `1.2x` / `1.35x` / `1.5x`) inside **⚙ Settings** with instant live apply (4-language User Guide updated).
+
+- **`v3.5.4`**: **Added `1x` / `1.5x` / `2x` / `2.5x` Scale Toggle on Scroll Translate Bar**: Added an inline scale pill on the Tab 5 floating capsule bar.
+
+- **`v3.5.3`**: **Added Cross-App Google Play Entitlement Verification (ClearScroll / CallMusicGuard)**: Automatically grants CN Tab 5 (Scroll Translate) or Plus (2 modules) when the corresponding Google Play standalone app has been purchased for over 12 hours (trusted UTC + signature check) and advises disabling the Play version to avoid conflicts.
 
 - **`v3.5.2`**: **Fixed Tab 3 Voice Intercept Gemini falsely showing the Pass-Through Translate handoff button + 7-day Full Trial & 6-Tier Pricing Alignment**:
   - **Strictly Scoped Handoff Button**: `FastCircleHandoffOverlay.onAssistOverlayWindowShown()` now requires an active Fast Circle session (`circleSessionActive == true`), and Tab 3 `TriggerActivity` / `InterceptCoordinator` explicitly clears any residual Fast Circle session before launching Gemini/AI — ensuring the round Pass-Through Translate button appears only for Fast Circle to Search (4-language User Guide updated).
