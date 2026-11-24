@@ -57,7 +57,10 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.6`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.7`）
+
+- **`v3.5.7`**：**修復 Tab 3 語音攔截「直接進入 Gemini Live（即時語音對話）」改為啟動預設浮層＋自動點擊 Live 按鈕**：
+  - 改用啟動「預設：Gemini 系統浮層視窗」後，由 `GeminiLiveAutoClickHelper` 透過無障礙服務自動偵測浮層上的 **Live** 按鈕並執行點擊（含手勢點擊備援），解決原本直接 Deep Link／Intent 喚起 Live 無反應的問題。
 
 - **`v3.5.6`**：**Tab 6 整合 Vivo 小螢幕「本頁不支持」一鍵修復與長截圖旗標自動守護**：
   - 依 `vivo X Fold6` 與 `MinScreen.apk` 反組譯實測結論，於 Tab 6 小螢幕卡片新增即時診斷（顯示 `scroll_shot_running_state` 與 `ScrollshotAccessibilityService` 全域批註衝突狀態）與「一鍵修復小螢幕」按鈕，透過 Shizuku 自動自我授權 `WRITE_SECURE_SETTINGS` 並將卡死的長截圖旗標歸零、停用衝突的全域批註無障礙服務（保留其餘全部無障礙服務）。
