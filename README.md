@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.8`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.9`）
+
+- **`v3.5.9`**：**修復 Shizuku 已啟動後「尚未偵測到 Shizuku 啟動」通知未自動消失問題**：
+  - `ShizukuBootMonitorService` 新增 `ACTION_USER_PRESENT`／`ACTION_SCREEN_ON` 螢幕喚醒即時重檢（不再受休眠 30 秒計時器延遲影響），並區分「尚未啟動」與「已啟動、等待授權」通知文案＋新增「關閉提醒」按鈕。
+  - 於 `FanRecentApp` 註冊全域 `addBinderReceivedListenerSticky` 與 `RecentTrackerAccessibilityService` 離開 Shizuku App 時主動呼叫 `dismissIfShizukuReady()`，確保 Shizuku 一就緒即刻自動移除通知。
 
 - **`v3.5.8`**：**Tab 4 環境隱身新增「Shizuku 異常診斷 Log 擷取與 Gmail 轉寄」按鈕**：
   - 於 Tab 4 頁面下方新增「擷取 Shizuku Log」與「透過 Gmail 寄出」按鈕，即使在部分機型發生 Shizuku 斷線／UserService 異常時仍可完整記錄裝置型號、Binder／權限／系統設定／環境隱身紀錄與 Process Logcat 並打包成 `.txt` 附件，預設呼叫 Gmail 並預填／一鍵複製開發者信箱（`dx9901mk5@gmail.com`）。
