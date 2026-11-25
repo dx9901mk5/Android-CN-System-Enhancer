@@ -57,7 +57,11 @@
      2. **MiCTS（觸發 Google 翻譯／畫圈搜尋）**：https://github.com/parallelcc/MiCTS — 推薦安裝 `MiCTS.apk`（觸發畫圈搜尋翻譯）與 `VISTrigger.apk`（手動觸發 Gemini 圈選語音呼喚介面）
      3. **Bada（陸版手機 CN ROM 可接入國際版快速分享渠道）**：https://github.com/kyujin-cho/Bada — 讓陸版 CN ROM 選擇接入國際版 Android 鄰近分享傳輸（快速分享 Quick Share），雖尚無法接通 AirDrop，但可讓國際版與陸版 Android 手機互找、互傳。
 
-### 🔄 近期版本更新摘要（`v0.1.0` → `v3.5.9`）
+### 🔄 近期版本更新摘要（`v0.1.0` → `v3.6.2`）
+
+- **`v3.6.2`**：**支援 Android 16 原生 Live Updates（Vivo OriginOS 6+ 台／陸版原子島即時更新上島）**：
+  - 宣告 `android.permission.POST_PROMOTED_NOTIFICATIONS` 權限，並新增 `LiveUpdateNotificationHelper`（於 Android 16+ 使用 `Notification.Builder` 搭配 `setOngoing(true)`、`setRequestPromotedOngoing(true)` 與 `setShortCriticalText` 短膠囊文字，嚴格遵守無 `RemoteViews`、無 `setColorized(true)` 與非 `IMPORTANCE_MIN` 規範）。
+  - 讓「相簿守護暫停同步」、「環境隱身保護中」、「無障礙守衛運作中」與「開機 Shizuku 檢測」持續通知自動支援上島顯示，並於 ⚙ 設定頁「通知權限」狀態整合 `canPostPromotedNotifications()` 檢查與 `ACTION_APP_NOTIFICATION_PROMOTION_SETTINGS` 一鍵跳轉。
 
 - **`v3.5.9`**：**修復 Shizuku 已啟動後「尚未偵測到 Shizuku 啟動」通知未自動消失問題**：
   - `ShizukuBootMonitorService` 新增 `ACTION_USER_PRESENT`／`ACTION_SCREEN_ON` 螢幕喚醒即時重檢（不再受休眠 30 秒計時器延遲影響），並區分「尚未啟動」與「已啟動、等待授權」通知文案＋新增「關閉提醒」按鈕。
